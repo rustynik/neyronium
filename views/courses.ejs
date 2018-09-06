@@ -7,16 +7,23 @@
     <title><%= title %></title>
     <link rel="stylesheet" type="text/css" media="screen" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" 
+    href="/stylesheets/style.css">
 </head>
 <body class="container">
-    <ul><h1><%= title %></h1>
+    <ul class="list-inline"><h1><%= title %></h1>
         <% if (items && items.length > 0) { %>
             <% items.forEach(item => { %>
-                <li>
-                    <h2><%= item.title %></h2>
-                    <h3><%= item.description %></h3>
-                    <p><%= item.contents %></p>
-                    <a href="apply/<%= item.id %>" class="btn btn-primary">Купить</a>    
+                <li class="list-inline-item">
+                    <div class="card <%= item.widgetClass %>" style="width: 18rem;">
+                        <div class="card-body">
+                                <h5 class="card-title"><%= item.title %></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><%= item.description %></h6>
+                                <p class="card-text"><%= item.contents.substr(0,100) %></p>
+                                <a href="apply/<%= item.id %>" class="btn btn-primary">Купить</a>            
+                        </div>
+                    </div>
+                        
                 </li>
             <% }); %> 
         <% } else { %>

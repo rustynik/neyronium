@@ -1,4 +1,27 @@
-.jumbotron {
+.happy-children {
   background-image: url(../images/happykinder.jpg);
-  background-size: 100% 100%;
+  background-position: right;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  font-weight: bold;
+}
+
+.red {
+  background-color: #dd3344;
+}
+
+.blue {
+  background-color: #aaaadd;
+}
+.yellow {
+  background-color: gold;
+}
+
+.green {
+  background-color: yellowgreen;
+}
+
+.magenta {
+  background-color: magenta;
 }

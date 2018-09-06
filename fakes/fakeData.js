@@ -1,22 +1,27 @@
 const types = [{
     id: "psychologist",
-    title: "Психолог"
+    title: "Психолог",
+    widgetClass: "green"
 },
 {
     id: "logopaeda",
-    title: "Логопед"
+    title: "Логопед",
+    widgetClass: "blue"
 },
 {
     id: "group",
-    title: "Групповые занятия"
+    title: "Групповые занятия",
+    widgetClass: "yellow"
 },
 {
     id: "recorded",
-    title: "Онлайн в записи"
+    title: "Онлайн в записи",
+    widgetClass: "grey"
 },
 {
     id: "live",
-    title: "Онлайн вживую"
+    title: "Онлайн вживую",
+    widgetClass: "magenta"
 }
 ];
 const courses = [{
@@ -32,9 +37,11 @@ const courses = [{
     Has populo animal urbanitas id, ex offendit pertinacia qui. Omnium hendrerit theophrastus vis ad, eu tale consetetur theophrastus eos, et quo prima illud adipisci. Ei agam eirmod neglegentur usu. Ei mutat postulant temporibus vim. Paulo labitur eu mea, prima perfecto mea te.
     
     Ne vix recusabo appellantur. Ea postea expetenda repudiandae vis. Ei mazim soluta aperiri sed. Cu sed liber democritum, mea veniam tempor reprimique te. Vis docendi consectetuer cu, cu sed placerat iracundia adolescens, vel tation laudem ne. Vel dignissim aliquando expetendis ex. Et sed soleat senserit, enim admodum te pro, id consul accumsan expetenda vim.`
+,widgetClass: "magenta"
 },
 {
     id: "diag_2_3",
+    widgetClass: "green",
     title: "Диагностика детей 2-3 лет",
     typeId: "psychologist",
     description: "It's my description",
