@@ -30,7 +30,7 @@ router.post('/:courseId', function(req, res, next) {
             });
 
             function makeText() {
-                return `Поступила заявка на продукт ${ course.title } (${ new Date().toLocaleString() })
+                return `С сайта neyronium.pro Поступила заявка на продукт ${ course.title } (${ new Date().toLocaleString() })
                 от пользователя ${ req.body.name } (${ req.body.email }, ${ req.body.phone }). 
                 Дополнительная информация: возраст ребенка ${ req.body.age || "не указано" },
                 комментарий: ${ req.body.comment || "отсутствует "}.`;

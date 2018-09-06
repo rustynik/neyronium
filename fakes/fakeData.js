@@ -12,10 +12,12 @@ const types = [{
 {
     id: "speech_therapist",
     title: "Логопед",
+    widgetClass: "magenta"
 },
 {
     id: "groups",
     title: "Групповое обучение",
+    widgetClass: "blue"
 },
 {
     id: "online",
