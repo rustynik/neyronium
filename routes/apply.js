@@ -20,22 +20,27 @@ router.post('/:courseId', function(req, res, next) {
         nodemailer.createTestAccount((err, account) => {
             // create reusable transporter object using the default SMTP transport
             let transporter = nodemailer.createTransport({
-                host: 'smtp.mail.ru',
-                port: 465,
-                secure: true, // true for 465, false for other ports
+                host: 'smtp.gmail.com',
+                port: 587,
+                secure: false, // true for 465, false for other ports
                 auth: {
-                    user: "vaisvanarius", // generated ethereal user
-                    pass: "maureau2018" // generated ethereal password
+                    user: "andrei.nikolaew@gmail.com", // generated ethereal user
+                    pass: "Maureau_2018" // generated ethereal password
                 }
             });
 
+            function makeText() {
+                return `Поступила заявка на продукт ${ course.title } (${ new Date().toLocaleString() })
+                от пользователя ${ req.body.name } (${ req.body.email }, ${ req.body.phone }). 
+                Дополнительная информация: возраст ребенка ${ req.body.age || "не указано" },
+                комментарий: ${ req.body.comment || "отсутствует "}.`;
+            }
             // setup email data with unicode symbols
             let mailOptions = {
-                from: 'vaisvanarius@mail.ru', // sender address
-                to: 'andrei.nikolaew@gmail.com', // list of receivers
-                subject: 'Hello', // Subject line
-                text: 'Hello world?', // plain text body
-                html: '<b>Hello world?</b>' // html body
+                from: 'andrei.nikolaew@gmail.com', // sender address
+                to: 'vaisvanarius@mail.ru', // list of receivers
+                subject: `Заявка на продукт ${ course.title }`, // Subject line
+                text: makeText()
             };
 
             // send mail with defined transport object

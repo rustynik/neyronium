@@ -11,45 +11,42 @@
     href="/stylesheets/style.css">
 </head>
 <body class="container happy-children">
-        <h1><%= title %></h1>    
-    <ul class="list-inline">
-                <% data.courses && data.courses.forEach(course => { %>
+    <h1><%= title %></h1>
+    
+    <% if (data.courses && data.courses.length) { %>
+        <h2>Курсы</h2>
+        <ul class="list-inline">        
+            <% data.courses.forEach(course => { %>
+                        
+                <li class="list-inline-item">
+                    <div class="card <%= course.widgetClass %>" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= course.title %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= course.description %></h6>
+                            <p class="card-text"><%= course.contents.substr(0,100) %></p>
+                            <a href="apply/<%= course.id %>" class="btn btn-primary">Купить</a>            
+                        </div>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+        <% if (data.subCategories && data.subCategories.length > 0) { %>
+            <% data.subCategories.forEach(item => { %>
+                <h2>Подкатегории</h2>
+                <ul class="list-inline">
                     <li class="list-inline-item">
-                        <div class="card <%= course.widgetClass %>" style="width: 18rem;">
+                        <div class="card <%= item.widgetClass %>" style="width: 18rem;">
                             <div class="card-body">
-                                    <h5 class="card-title"><%= course.title %></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"><%= course.description %></h6>
-                                    <p class="card-text"><%= course.contents.substr(0,100) %></p>
-                                    <a href="apply/<%= course.id %>" class="btn btn-primary">Купить</a>            
+                                <h5 class="card-title"><%= item.title %></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><%= item.description %></h6>
+                                <a href="/courses/<%= item.id %>" class="btn btn-primary">Подробнее</a>            
                             </div>
                         </div>
                     </li>
-                <% }) %>
-            </ul>
-    <ul class="list-unstyled">
-        <% if (data.subCategories && data.subCategories.length > 0) { %>
-            <% data.subCategories.forEach(item => { %>
-                <li class="fa-li fa fa-angle-right">
-                    <h2><%= item.title %></h2>
-                    <h4><%= item.description %></h4>
-                    <ul class="list-inline">
-                        <% item.courses && item.courses.forEach(course => { %>
-                            <li class="list-inline-item">
-                                <div class="card <%= item.widgetClass %>" style="width: 18rem;">
-                                    <div class="card-body">
-                                            <h5 class="card-title"><%= course.title %></h5>
-                                            <h6 class="card-subtitle mb-2 text-muted"><%= course.description %></h6>
-                                            <p class="card-text"><%= course.contents.substr(0,100) %></p>
-                                            <a href="apply/<%= item.id %>" class="btn btn-primary">Купить</a>            
-                                    </div>
-                                </div>
-                            </li>
-                        <% }) %>
-                    </ul>
-                </li>
-            <% }); %> 
-        <% } %>    
-    </ul>
-
+                </ul>
+            <% }); %>
+        <% }; %>
+             
 </body>
 </html>
