@@ -25,7 +25,7 @@ router.post('/:courseId', function(req, res, next) {
                 secure: true, // true for 465, false for other ports
                 auth: {
                     user: "andrei.nikolaew@gmail.com", // generated ethereal user
-                    pass: "Maureau_2018" // generated ethereal password
+                    pass: "CallaMaranatha2018" // generated ethereal password
                 }
             });
 
