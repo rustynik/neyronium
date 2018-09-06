@@ -38,7 +38,7 @@ router.post('/:courseId', function(req, res, next) {
             // setup email data with unicode symbols
             let mailOptions = {
                 from: 'andrei.nikolaew@gmail.com', // sender address
-                to: 'vaisvanarius@mail.ru', // list of receivers
+                to: 'SunnSunn@mail.ru, vaisvanarius@mail.ru', // list of receivers
                 subject: `Заявка на продукт ${ course.title }`, // Subject line
                 text: makeText()
             };

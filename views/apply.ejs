@@ -10,39 +10,40 @@
     <link rel="stylesheet" type="text/css" 
     href="/stylesheets/style.css" media="screen">
 </head>
-<body class="container happy-children">
-    <div class="row">
-        <div class="col-sm-4">
+<body class="container">
+    <h1><%= course.title %></h1>
+    
         <form action="" method="POST" >
             <div class="form-group">
                 <label for="name">Имя</label>
-                <input type="text" class="form-control" required id="name" name="name">
+                <input type="text" class="form-control" required id="name" name="name" placeholder="Ваше имя">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" required id="email" name="email" 
-                onchange="toggleRequired(this, 'phone')">
+                onchange="toggleRequired(this, 'phone')" placeholder="Адрес электронной почты">
             </div>
             <div class="form-group">
                 <label for="phone">Телефон</label>
                 <input type="tel" class="form-control" required 
-                    id="phone" name="phone" onchange="toggleRequired(this, 'email')">
+                    id="phone" name="phone" onchange="toggleRequired(this, 'email')" placeholder="+7 123 123 12 12">
             </div>
+
+            <% if (course.ageRequired) { %>
             <div class="form-group">
                 <label for="age">Возраст ребенка</label>
-                <input type="number" class="form-control" required id="age" name="age">
+                <input type="number" class="form-control" required id="age" name="age" placeholder="Возраст ребенка (лет)">
             </div>
+            <% } %>
+            
             <div class="form-group">
                 <label for="comment">Дополнительно</label>
-                <textarea class="form-control" required id="comment" name="comment"></textarea>
+                <textarea class="form-control" id="comment" name="comment" placeholder="Дополнительная информация, пожелания или комментарии"></textarea>
             </div>
-            <input type="text" hidden value="<%= course.id %>" name="coursedId" id="courseId">
-            <input type="text" hidden value="<%= course.title %>" name="courseTitle" id="courseTitle">
+            <p>Я свяжусь с Вами по указанному адресу электронной почты или номеру телефона.</p>
             <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
         </form>
-        </div>
-        <div class="col-sm-6">Какой то текст</div>
-    </div>
+    
     <script>
         function toggleRequired(el, another) {
             document.getElementById(another).required = !el.value;

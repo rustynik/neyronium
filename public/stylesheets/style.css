@@ -1,11 +1,19 @@
 .happy-children {
-  background-image: url(../images/happykinder.jpg);
+  background-image: url(../images/happykinder.png);
   background-position: right;
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-color: white;
-  font-weight: bold;
 }
+
+.jumbotron {
+  background-color: cadetblue;
+  color: #343a40;
+}
+.jumbotron a {
+  color: cadetblue;
+}
+
 .rainbow_school {
   background-image: url(../images/rainbow.jpg);
   background-size: 50px 50px;

@@ -12,6 +12,7 @@ var courses = fakeDb.courses;
 var indexRouter = require('./routes/index')(courseTypes);
 var coursesRouter = require('./routes/courses')(courseTypes, courses);
 var applyRouter = require('./routes/apply');
+var detailsRouter = require('./routes/details');
 
 var app = express();
 
@@ -32,7 +33,8 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/courses', coursesRouter);
-app.use('/courses/apply', applyRouter);
+app.use('/apply', applyRouter);
+app.use('/details', detailsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

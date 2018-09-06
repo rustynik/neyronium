@@ -113,6 +113,7 @@ const courses = [{
 	id: "calligraphy",
 	title: "Каллиграфия",
     typeId: "groups",
+    ageRequired: true,
     widgetClass: "calligraphy",
 	description: "Каллиграфия",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo"
@@ -121,6 +122,7 @@ const courses = [{
 	id: "readers_club",
 	title: "Клуб любителей чтения",
 	typeId: "groups",
+    ageRequired: true,
     description: "Любим читать",
     widgetClass: "books",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio."
@@ -130,6 +132,7 @@ const courses = [{
     title: "Любознатели-1",
     widgetClass: "luboznateli",
 	typeId: "groups",
+    ageRequired: true,
 	description: "Любим читать",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio."
 },
@@ -138,6 +141,7 @@ const courses = [{
     title: "Любознатели-2",
     widgetClass: "luboznateli",
 	typeId: "groups",
+    ageRequired: true,
 	description: "Любим читать",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio."
 },
@@ -145,7 +149,8 @@ const courses = [{
 	id: "luboznateli3",
     title: "Любознатели-3",
     widgetClass: "luboznateli",
-	typeId: "groups",
+    typeId: "groups",
+    ageRequired: true,
 	description: "Любим читать",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio."
 },
@@ -154,13 +159,15 @@ const courses = [{
     title: "Любознатели-4",
     widgetClass: "luboznateli",
 	typeId: "groups",
+    ageRequired: true,
 	description: "Любим читать",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio."
 },
 {
 	id: "rainbow_school",
 	title: "Школа радуги",
-	typeId: "groups",
+    typeId: "groups",
+    ageRequired: true,
 	description: "Любим читать",
 	contents: "Lorem ipsum dolor sit amet, et eum labore essent, nam omnesque laboramus ei. An sed vidisse maiorum incorrupte. Audire omittam no usu, eu omnes omittam placerat eam. Pri id veniam dolorem qualisque, velit contentiones te usu. His legere nonumes accusam ad. Cu mel justo voluptua consequat, ex cum etiam summo quaestio.",
 	widgetClass: "rainbow_school"
