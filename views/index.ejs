@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Курсы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" 
+    href="/stylesheets/style.css">
+</head>
+<body class="container">
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container happy-children">
+                  <h1 class="display-2">Разные курсы</h1>
+                  <p class="lead">Тут можно найти всякие курсы.</p>
+                </div>
+              </div>
+    <div class="row">
+        <nav class="navbar bg-light navbar-light">
+            <ul class="navbar-nav">    
+                <li class="navbar-item">
+                    <a class="nav-link" href="about.html">Давайте знакомиться</a></li>
+                <hr/>
+                <% courses.forEach(course => { %>
+                    <li class="navbar-i">
+                        <a href="courses/<%= course.id %>" class="nav-link"><%= course.title %></a>
+                    </li>
+                <% }) %>
+                <hr/>
+                <li class="navbar-item"><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
