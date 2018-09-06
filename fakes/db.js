@@ -1,20 +1,25 @@
 module.exports = (data) => {
     
-    const courseTypes = {
+    const categories = {
+        
         findById: (id, cb) => {
-        cb(null, data.types.find(item => item.id == id));
+            cb(null, data.types.find(item => item.id == id));
         },
 
-        findAll: (cb) => {
-            cb(null, data.types)
+        findByParent: (parentId, cb) => {
+            const result = { 
+                subCategories: data.types
+                    .filter(item => item.parentId == parentId)
+                    .map(item => { item.courses = data.courses.filter(course => course.typeId == item.id ); return item; }),
+                courses: data.courses.filter(course => course.typeId == parentId)
+            };
+            cb(null, result);
         }
     }
     
     const courses = {
         findByType: (type, cb) => {
-            console.log(type);
             const result = data.courses.filter(course => course.typeId == type);
-            console.log(result);
             cb(null, result);
         },
         findById: (id, cb) => {
@@ -24,6 +29,6 @@ module.exports = (data) => {
 
     return {
         courses,
-        courseTypes
+        courseTypes: categories
     };
 }

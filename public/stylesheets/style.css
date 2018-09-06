@@ -6,7 +6,39 @@
   background-color: white;
   font-weight: bold;
 }
+.rainbow_school {
+  background-image: url(../images/rainbow.jpg);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right bottom;
+  
+}
+.books {
+  background-image: url(../images/books.jpg);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right bottom;
+  
+}
+.luboznateli {
+  background-image: url(../images/rocket.jpg);
+  background-size: 50px 50px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-color: white;
+  
+}
 
+.calligraphy {
+  background-image: url(../images/calli.jpg);
+  background-size: 50px 50px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-color: white;
+  
+}
 .red {
   background-color: #dd3344;
 }

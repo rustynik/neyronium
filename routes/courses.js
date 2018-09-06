@@ -12,10 +12,10 @@ const coursesRouterFactory = (coursesTypes, courses) => {
     coursesTypes.findById(type, (err, courseType) => {
       if (err || !courseType) next(err);
  
-      courses.findByType(type, (err, data) => {
+      coursesTypes.findByParent(type, (err, data) => {
         if (err) next(err);
         console.log(data)
-        res.render('courses', { title: courseType.title, items: data });
+        res.render('courses', { title: courseType.title, data: data });
       });
 
     });

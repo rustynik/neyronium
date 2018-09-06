@@ -6,7 +6,7 @@ const routerFactory = (courseTypes) => {
   expect(courseTypes, "Отсутствует репозиторий типов курсов").to.exist;
 
   router.get('/', function(req, res, next) {
-    courseTypes.findAll((err, courses) => {
+    courseTypes.findByParent(null, (err, courses) => {
       if (err) next(err);
       function getColor() {
         const counter = 0;
