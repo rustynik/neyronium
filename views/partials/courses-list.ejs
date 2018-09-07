@@ -1,0 +1,8 @@
+<ul class="list-inline">        
+    <% courses.forEach(course => { %>
+    
+        <li class="list-inline-item">
+            <%- include("course-tile", { course, buttonText }) %>
+        </li>
+    <% }) %>
+</ul>

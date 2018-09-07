@@ -23,7 +23,7 @@ const coursesRouterFactory = (coursesTypes, courses) => {
           next(err);
         }
         console.log(data)
-        res.render('courses', { title: courseType.title, data: data });
+        res.render('courses', { title: courseType.title, description: courseType.description || "", data: data });
       });
 
     });

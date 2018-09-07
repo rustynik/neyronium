@@ -1,51 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%= title %></title>
-    <link rel="stylesheet" type="text/css" media="screen" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" 
-    href="/stylesheets/style.css">
+    <%- include("partials/head") %>
 </head>
-<body class="container happy-children">
-    <h1><%= title %></h1>
+<body class="happy-children">
     
-    <% if (data.courses && data.courses.length) { %>
-        <h2>Курсы</h2>
-        <ul class="list-inline">        
-            <% data.courses.forEach(course => { %>
-                        
-                <li class="list-inline-item">
-                    <div class="card <%= course.widgetClass %>" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= course.title %></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><%= course.description %></h6>
-                            <a href="/details/<%= course.id %>" class="btn btn-primary">Подробнее</a>            
-                        </div>
-                    </div>
-                </li>
-            <% }) %>
-        </ul>
-    <% } %>
+    <%- include("partials/nav") %>
+    
+    <%- include("partials/index/jumbotron", { title: title, subTitle: description }) %>
+
+    <div class="container">
+    
+        <% if (data.courses && data.courses.length) { %>
+            <h2>Курсы</h2>
+            <%- include("partials/courses-list", { courses: data.courses, buttonText: "Подробнее" }) %>
+        <% } %>
+        
         <% if (data.subCategories && data.subCategories.length > 0) { %>
-            <% data.subCategories.forEach(item => { %>
-                <h2>Подкатегории</h2>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <div class="card <%= item.widgetClass %>" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= item.title %></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><%= item.description %></h6>
-                                <a href="/courses/<%= item.id %>" class="btn btn-primary">Подробнее</a>            
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            <% }); %>
-        <% }; %>
-             
+            <h2>Подкатегории</h2>
+
+            <%- include("partials/categories-list", { items: data.subCategories, buttonText: "Подробнее" }) %>
+        <% } %>
+    </div>
 </body>
 </html>

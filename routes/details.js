@@ -6,7 +6,7 @@ router.get('/:courseId', function(req, res, next) {
         if (err) next(err);
         if (!course) next("Что-то пошло не так");
 
-        res.render('details', { course });
+        res.render('details', { course, title: course.title });
     })    
 });
 

@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Курсы</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" 
-    href="/stylesheets/style.css">
+    <%- include("partials/head") %>
 </head>
-<body class="container happy-children">        
+<body class="happy-children">        
+
+    <%- include("partials/nav") %>
+
+    <%- include("partials/index/jumbotron", 
+                { title: "Психолог & Логопед", subTitle: "Здесь можно найти всякие курсы" }) %>
         
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">    
-            <h2 class="display-2gi">Психолог & Логопед</h2>
-            <p class="lead">Тут можно найти всякие курсы.</p>
-            <nav class="navbar navbar-expand-sm bg-dark">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link" href="about">
-                                <span class="fa fa-address-card"></span>
-                                Обо мне
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="contacts">
-                                <span class="fa fa-envelope"></span>
-                                Контакты
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="blog">
-                                <span class="fa fa-pencil"></span>
-                                Блог
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-        </div>
-    </div>
+
+    <div class="container" >
+        
+        <%- include("partials/categories-list", { items: courses.subCategories, buttonText: "Подробнее" }) %>
     
-    <ul class="list-inline">
-            <% courses.subCategories.forEach(course => { %>
-                <li class="list-inline-item">
-                        <div class="card <%= course.widgetClass %>" style="width: 18rem;">
-                                <div class="card-body">
-                                  <h5 class="card-title"><%= course.title %></h5>
-                                  <h6 class="card-subtitle mb-2 text-muted"><%= course.description %></h6>
-                                  <p class="card-text"><%= course.contents %></p>
-                                  <a href="courses/<%= course.id %>" class="card-link">Подробнее</a>
-                                </div>
-                              </div>
-                    
-                </li>
-            <% }) %>
-    </ul>
-    <p>
-            12-го августа 18..., ровно в третий день после дня моего рождения, в который мне минуло десять лет и в который я получил такие чудесные подарки, в семь часов утра Карл Иваныч разбудил меня, ударив над самой моей головой хлопушкой — из сахарной бумаги на палке — по мухе. Он сделал это так неловко, что задел образок моего ангела, висевший на дубовой спинке кровати, и что убитая муха упала мне прямо на голову. Я высунул нос из-под одеяла, остановил рукою образок, который продолжал качаться, скинул убитую муху на пол и хотя заспанными, но сердитыми глазами окинул Карла Иваныча. Он же, в пестром ваточном халате, подпоясанном поясом из той же материи, в красной вязаной ермолке с кисточкой и в мягких козловых сапогах, продолжал ходить около стен, прицеливаться и хлопать.
-            «Положим, — думал я, — я маленький, но зачем он тревожит меня? Отчего он не бьет мух около Володиной постели? вон их сколько! Нет, Володя старше меня; а я меньше всех: оттого он меня и мучит. Только о том и думает всю жизнь, — прошептал я, — как бы мне делать неприятности. Он очень хорошо видит, что разбудил и испугал меня, но выказывает, как будто не замечает... противный человек! И халат, и шапочка, и кисточка — какие противные!»
-            В то время как я таким образом мысленно выражал свою досаду на Карла Иваныча, он подошел к своей кровати, взглянул на часы, которые висели над нею в шитом бисерном башмачке, повесил хлопушку на гвоздик и, как заметно было, в самом приятном расположении духа повернулся к нам.
-    </p>
+        <%- include("partials/index/content") %>
+        
+        </div>
     </div>
 </body>
 </html>

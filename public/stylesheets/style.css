@@ -10,6 +10,14 @@
   background-color: cadetblue;
   color: #343a40;
 }
+ul.nav {
+  background-color: cadetblue;
+  border-bottom: solid #343a40 1px;
+}
+
+ul.nav li a {
+  color: #343a40;
+}
 .jumbotron a {
   color: cadetblue;
 }
