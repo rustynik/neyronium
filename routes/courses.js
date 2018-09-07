@@ -10,11 +10,8 @@ const coursesRouterFactory = (coursesTypes, courses) => {
   router.get('/:courseTypeId', function(req, res, next) {
     const type = req.params.courseTypeId;
     coursesTypes.findById(type, (err, courseType) => {
-      if (err) {
-        console.error(err);
-        next(err);
-      }
-
+      if (err) next(err);
+      
       if (!courseType) {
         next({ message: `Course type ${ type } not found.`, status: 404 });
       }
