@@ -14,7 +14,7 @@ ul.nav {
   background-color: cadetblue;
   border-bottom: solid #343a40 1px;
 }
-@media screean and (max-width: 320px)  {
+@media screen and (max-width: 320px)  {
   ul.nav {
     font-size: xx-small;
   }
