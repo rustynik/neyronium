@@ -16,7 +16,7 @@ ul.nav {
 }
 @media screen and (max-width: 320px)  {
   ul.nav {
-    font-size: xx-small;
+    font-size: x-small;
   }
 
   h2.display-4gi {
