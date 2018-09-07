@@ -1,22 +1,16 @@
 const express = require('express'),
-      router = express.Router(),
-      expect = require('chai').expect;
-
-const coursesRouterFactory = (coursesTypes, courses) => {
-
-  expect(coursesTypes, "Нет репозитория типов курсов").to.exist;
-  expect(courses, "Нет репозитория курсов").to.exist;
+      router = express.Router();
 
   router.get('/:courseTypeId', function(req, res, next) {
     const type = req.params.courseTypeId;
-    coursesTypes.findById(type, (err, courseType) => {
+    req.courseTypes.findById(type, (err, courseType) => {
       if (err) next(err);
       
       if (!courseType) {
         next({ message: `Course type ${ type } not found.`, status: 404 });
       }
 
-      coursesTypes.findByParent(type, (err, data) => {
+      req.courseTypes.findByParent(type, (err, data) => {
         if (err) {
           console.error(err);
           next(err);
@@ -29,7 +23,5 @@ const coursesRouterFactory = (coursesTypes, courses) => {
 
   });
 
-  return router;
-};
-
-module.exports = coursesRouterFactory;
+  
+module.exports = router;

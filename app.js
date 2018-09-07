@@ -5,12 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fakeDb = require('./fakes/db')(require('./fakes/fakeData'));
 
-var courseTypes = fakeDb.courseTypes;
-var courses = fakeDb.courses;
-
-
-var indexRouter = require('./routes/index')(courseTypes);
-var coursesRouter = require('./routes/courses')(courseTypes, courses);
+var indexRouter = require('./routes/index');
+var coursesRouter = require('./routes/courses');
 var applyRouter = require('./routes/apply');
 var detailsRouter = require('./routes/details');
 
