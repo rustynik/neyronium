@@ -4,7 +4,7 @@ const express = require('express'),
 router.get('/:courseId', function(req, res, next) {
     req.courses.findById(req.params.courseId, (err, course) => {
         if (err) next(err);
-        if (!course) next("Что-то пошло не так");
+        if (!course) next({ status: 404, message: `course ${ req.params.courseId } not found`});
 
         res.render('details', { course, title: course.title });
     })    

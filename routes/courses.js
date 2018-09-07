@@ -15,7 +15,9 @@ const coursesRouterFactory = (coursesTypes, courses) => {
         next(err);
       }
 
-      if (!courseType) console.log(`Course type ${ type } not found.`);
+      if (!courseType) {
+        next({ message: `Course type ${ type } not found.`, status: 404 });
+      }
 
       coursesTypes.findByParent(type, (err, data) => {
         if (err) {

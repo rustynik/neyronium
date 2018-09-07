@@ -1,3 +1,23 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body class="happy-children">
+    
+    <%- include("partials/nav") %>
+    
+    <%- include("partials/index/jumbotron", { title: "Ошибка", subTitle: "Произошла ошибка" }) %>
+
+    <div class="container">
+        <h1>Извините,</h1>
+        <h2><%= message %></h2>
+        
+        <h3><%= error.message %></h1>
+        <h4><%= error.status %></h2>
+        <pre><%= error.stack %></pre>
+
+    </div>
+</body>
+</html>
+
