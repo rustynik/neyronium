@@ -13,7 +13,15 @@
 ul.nav {
   background-color: cadetblue;
   border-bottom: solid #343a40 1px;
-  font-size: 1vw;
+}
+@media mobile  {
+  ul.nav {
+    font-size: x-small;
+  }
+
+  h2.display-4gi {
+    font-size: smaller;
+  }
 }
 
 ul.nav li a {
