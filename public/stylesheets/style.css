@@ -13,6 +13,7 @@
 ul.nav {
   background-color: cadetblue;
   border-bottom: solid #343a40 1px;
+  font-size: x-small;
 }
 
 ul.nav li a {
