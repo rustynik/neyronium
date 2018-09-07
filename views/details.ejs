@@ -7,9 +7,10 @@
     <%- include("partials/nav") %>
 
     <%- include("partials/index/jumbotron", 
-                { title: course.title, subTitle: course.description }) %>
+                { title: "Подробно", subTitle: course.title }) %>
     
     <div class="container">
+        <h2><%= course.description %></h2>
         <p><%= course.contents %></p>
         <a href="/apply/<%= course.id %>" class="btn btn-primary">Оставить заявку</a>
         <a href="#" class="btn btn-secondary" onclick="history.back()">Назад</a>    

@@ -7,10 +7,10 @@
     
     <%- include("partials/nav") %>
     
-    <%- include("partials/index/jumbotron", { title: title, subTitle: description }) %>
+    <%- include("partials/index/jumbotron", { title: "Курсы", subTitle: title }) %>
 
     <div class="container">
-    
+        <h2><%= description %></h2>
         <% if (data.courses && data.courses.length) { %>
             <h2>Курсы</h2>
             <%- include("partials/courses-list", { courses: data.courses, buttonText: "Подробнее" }) %>

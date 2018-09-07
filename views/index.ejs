@@ -8,14 +8,15 @@
     <%- include("partials/nav") %>
 
     <%- include("partials/index/jumbotron", 
-                { title: "Психолог & Логопед", subTitle: "Здесь можно найти всякие курсы" }) %>
+                { title: "Нейрониум", subTitle: "Центр развития интеллекта" }) %>
         
 
     <div class="container" >
         
+        <%- include("partials/index/content") %>
+
         <%- include("partials/categories-list", { items: courses.subCategories, buttonText: "Подробнее" }) %>
     
-        <%- include("partials/index/content") %>
         
         </div>
     </div>
