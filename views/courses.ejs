@@ -13,13 +13,29 @@
         <h2><%= description %></h2>
         <% if (data.courses && data.courses.length) { %>
             <h2>Курсы</h2>
-            <%- include("partials/courses-list", { courses: data.courses, buttonText: "Подробнее" }) %>
+            <%- include("partials/courses-list", { courses: data.courses, actions: [
+                {
+                    name: "details",
+                    displayName: "Подробнее",
+                    buttonClass: "primary"
+                }
+                ], buttonText: "Подробнее" }) %>
         <% } %>
         
         <% if (data.subCategories && data.subCategories.length > 0) { %>
             <h2>Подкатегории</h2>
 
-            <%- include("partials/categories-list", { items: data.subCategories, buttonText: "Подробнее" }) %>
+            <%- include("partials/categories-list", { 
+                
+                items: data.subCategories, 
+                
+                actions: [{
+                        name: "courses",
+                        displayName: "Подробнее",
+                        buttonClass: "primary"
+                    }
+                ] 
+            }) %>
         <% } %>
     </div>
 </body>

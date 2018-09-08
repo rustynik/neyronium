@@ -15,7 +15,17 @@
         
         <%- include("partials/index/content") %>
 
-        <%- include("partials/categories-list", { items: courses.subCategories, buttonText: "Подробнее" }) %>
+        <%- include("partials/categories-list", { 
+            
+                items: courses.subCategories, 
+            
+                actions: [{
+                        name: "courses",
+                        displayName: "Подробнее",
+                        buttonClass: "primary"
+                    }
+                ] 
+            }) %>
     
         
         </div>

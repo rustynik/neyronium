@@ -1,0 +1,31 @@
+[
+    {
+        "id": "psychologist",
+        "title": "Психолог",
+        "description": "Развивающие коррекционные занятия (задержка психического развития, умственная отсталость, аутизм)",
+        "widgetClass": "green"
+    },
+    {
+        "id": "psycho_diagnostics",
+        "parentId": "psychologist",
+        "title": "Диагностика",
+        "widgetClass": "green"
+    },	
+    {
+        "id": "speech_therapist",
+        "title": "Логопед",
+        "description": "Логопедические занятия (индивидуальные и групповые)",
+        "widgetClass": "magenta"
+    },
+    {
+        "id": "groups",
+        "title": "Групповое обучение",
+        "widgetClass": "blue"
+    },
+    {
+        "id": "online",
+        "title": "Онлайн-обучение",
+        "description": "Консультации для родителей и педагогов",
+        "widgetClass": "yellow"
+    }
+]

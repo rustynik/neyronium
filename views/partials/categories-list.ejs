@@ -1,7 +1,7 @@
 <ul class="list-inline">
     <% items.forEach(item => { %>
     <li class="list-inline-item">
-        <%- include("category-tile", { item, buttonText }) %>
+        <%- include("category-tile", { item, actions }) %>
     </li>
     <% }); %>
 </ul>
