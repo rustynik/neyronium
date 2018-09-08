@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            
+            <div class="form-group">
+                <label for="id">unique identifier for your new category</label>
+                <input type="text" class="form-control" required name="id" id="id" placeholder="unique identifier">
+            </div>
+            <div class="form-group">
+                <label for="title">Nice title for your new category</label>
+                <input type="text" class="form-control" required name="title" id="title" placeholder="category title">
+            </div>  
+            
+            <div class="form-group">
+                <label for="parentId">Select parent for your category</label>
+                <select id="parentId" class="form-control" required name="parentId">
+                    <% categories.forEach(cat => {    <!-- for all other categories -->
+                        
+                        const selected = cat.id == parent.id ? "selected" : null; %>
+                        
+                        <option value="<%= cat.id %>" <%=selected %>>
+                            <%= cat.title || "root" %>
+                        </option>
+                    <% }); %>
+            
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desciption">Nice description for your new category</label>
+                <input type="text" class="form-control" required name="description" id="description" placeholder="category desciption">
+            </div>
+            
+            <div class="form-group">
+                <label for="widgetClass">Beautiful class for your new category</label>
+                <input type="text" class="form-control" name="widgetClass" id="widgetClass" placeholder="css class">
+            </div>  
+
+            <div class="form-group">
+                    <label for="widgetClass">Background color for your category</label>
+                    <input type="text" class="form-control" name="bgColor" id="bgColor" placeholder="bg color">
+                </div>  
+            
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+    </div>
+</body>

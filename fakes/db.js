@@ -14,6 +14,25 @@ module.exports = (data) => {
                 courses: data.courses.filter(course => course.typeId == parentId)
             };
             cb(null, result);
+        },
+        
+        getAll: (cb) => {
+            cb(null, data.types.slice());
+        },
+
+        add: (category, cb) => {
+            data.types.push(category);
+
+            cb(null, category);
+        },
+
+        update: (newValue, cb) => {
+            const old = data.types.find(x => x.id == newValue.id);
+            if (!old) cb(new Error("object not found")); 
+            else {
+                Object.assign(old, newValue);
+            }
+            cb(null, old);
         }
     }
     
@@ -24,6 +43,18 @@ module.exports = (data) => {
         },
         findById: (id, cb) => {
             cb(null, data.courses.find(course => course.id == id));
+        },
+        add: (course, cb) => {
+            data.courses.push(course);
+            cb(null, course);
+        },
+        update: (course, cb) => {
+            const old = data.courses.find(x => x.id == newValue.id);
+            if (!old) cb(new Error("object not found")); 
+            else {
+                Object.assign(old, newValue);
+            }
+            cb(null, old);
         }
     };
 

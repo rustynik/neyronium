@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+</head>
+<body>
+    <!-- inputs: course, categories  TODO: requires age! -->
+    <div class="container">
+        <form method="POST">
+            
+            <div class="form-group">
+                <label for="id">unique identifier for your new course</label>
+                <input type="text" class="form-control" required name="id" id="id" placeholder="unique identifier">
+            </div>
+            <div class="form-group">
+                <label for="title">Nice title for your new title</label>
+                <input type="text" class="form-control" required name="title" id="title" placeholder="category title">
+            </div>  
+            
+            <div class="form-group">
+                <label for="typeId">Select category for your course</label>
+                <select id="typeId" class="form-control" required name="typeId">
+                    <% categories.forEach(cat => {    <!-- for all other categories -->
+                        
+                        const selected = cat.id == cousre.typeId ? "selected" : null; %>
+                        
+                        <option value="<%= cat.id %>" <%=selected %>>
+                            <%= cat.title || "root" %>
+                        </option>
+                    <% }); %>
+            
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desciption">Nice description for your new course</label>
+                <input type="text" class="form-control" required name="description" id="description" placeholder="category desciption">
+            </div>
+            
+            <div class="form-group">
+                <label for="widgetClass">Beautiful class for your new class</label>
+                <input type="text" class="form-control" name="widgetClass" id="widgetClass" placeholder="css class">
+            </div>  
+
+            <div class="form-group">
+                    <label for="widgetClass">Background color for your class</label>
+                    <input type="text" class="form-control" name="bgColor" id="bgColor" placeholder="bg color">
+            </div>  
+
+            <div class="form-group">
+                    <label for="contents">Background color for your class</label>
+                    <textarea type="text" class="form-control" name="contents" id="contents" placeholder="contents"></textarea>
+            </div>  
+            
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+    </div>
+</body>
