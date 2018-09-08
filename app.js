@@ -3,7 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var fakeDb = require('./fakes/db')(require('./fakes/fakeData'));
+
+var db = require("./services/mongodbDatabase");
+
+//var db = require('./fakes/db')(require('./fakes/fakeData'));
 
 var indexRouter = require('./routes/index');
 var coursesRouter = require('./routes/courses');
@@ -23,8 +26,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
-  req.courses = fakeDb.courses;
-  req.courseTypes = fakeDb.courseTypes;
+  req.courses = db.courses;
+  req.courseTypes = db.courseTypes;
   next();
 });
 

@@ -40,7 +40,7 @@ router.get('/categories/:categoryId', function(req, res, next) {
         }); 
 });
 
-router.get('/categories/add/:parentId', (req, res, next) => {
+router.get('/category/add/:parentId?', (req, res, next) => {
     // get course by id and error if not found
     const parentId = req.params.parentId || null;
 
@@ -64,18 +64,21 @@ router.get('/categories/add/:parentId', (req, res, next) => {
 
 // add category 
 // @parentId optional parent id (category to add as subcategory to)
-router.post('/categories/add/:parentId', (req, res, next) => {
+router.post('/category/add/:parentId?', (req, res, next) => {
     
     // TODO: validate model 
     
     req.courseTypes.findById(req.body.parentId || null, (err, parent) => {
         
         // if parent not found, throw 
+        // TODO: "" >> null (SELECT doesn't give you null...)
+        const category = req.body
+        if (category.parentId == '') category.parentId = null;  
 
-        req.courseTypes.add(req.body, (err, data) => {
+        req.courseTypes.add(category, (err, data) => {
             if (err) next(err);
             
-            res.redirect('../../categories/' + req.body.parentId);
+            res.redirect('../../categories/' + (category.parentId || null));
         });
 
     });
@@ -117,7 +120,8 @@ router.post('/categories/edit/:categoryId', (req, res, next) => {
         // if parent not found, throw 
         let category = req.body;
         category.id = categoryId;
-
+        // TODO: "" >> null (SELECT doesn't give you null...)
+        if (category.parentId == '') category.parentId = null;  
         req.courseTypes.update(category, (err, data) => {
             if (err) next(err);
     
@@ -157,11 +161,15 @@ router.get('/courses/add/:categoryId', (req, res, next) => {
 router.post('/courses/add/:categoryId', (req, res, next) => {
     
     // TODO: validate model 
+    const course = req.body;
+
     console.log('adding course', req.body);
-    req.courses.add(req.body, (err, data) => {
+    // TODO: "" >> null (SELECT doesn't give you null...)
+    if (course.typeId == '') course.typeId = null;
+    req.courses.add(course, (err, data) => {
         if (err) next(err);
         
-        res.redirect('../../categories/' + req.body.typeId);
+        res.redirect('../../categories/' + (course.typeId || ""));
     });
     
 });
@@ -205,6 +213,9 @@ router.post('/courses/edit/:courseId', (req, res, next) => {
     // TODO: validate model 
     const course = req.body;
     course.id = req.params.courseId;
+    // TODO: "" >> null (SELECT doesn't give you null...)
+    if (course.typeId == '') course.typeId = null;
+
 
     req.courses.update(course, (err, data) => {
         if (err) next(err);

@@ -18,7 +18,7 @@
             
             <div class="form-group">
                 <label for="parentId">Select parent for your category</label>
-                <select id="parentId" class="form-control" required name="parentId">
+                <select id="parentId" class="form-control"  name="parentId">
                     <% categories.forEach(cat => {    <!-- for all other categories -->
                         
                         const selected = cat.id == parent.id ? "selected" : null; %>
