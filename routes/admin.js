@@ -157,7 +157,7 @@ router.get('/courses/add/:categoryId', (req, res, next) => {
 router.post('/courses/add/:categoryId', (req, res, next) => {
     
     // TODO: validate model 
-    
+    console.log('adding course', req.body);
     req.courses.add(req.body, (err, data) => {
         if (err) next(err);
         
@@ -168,29 +168,39 @@ router.post('/courses/add/:categoryId', (req, res, next) => {
 
 router.get('/courses/edit/:courseId', (req, res, next) => {
     // get course by id and error if not found
-    const courseId = req.params.courseId || null;
+    const courseId = req.params.courseId;
 
-    req.courseTypes.getAll((err, categories) => {
+    req.courses.findById(courseId, (err, course) => {
+        
         if (err) next(err);
         
-        categories.unshift({
-                title: "Root",
-                id: null
+        if (!course)
+            next({ message: `Course ${ courseId } not found.`, status: 404 });
+        console.log('found course', course);
+        req.courseTypes.getAll((err, categories) => {
+            if (err) next(err);
+            
+            categories.unshift({
+                    title: "Root",
+                    id: null
+            });
+    
+            const category = categories.find(x => x.id == course.typeId);
+            
+            if (!category) {
+              next({ message: `Course type ${ course.typeId } not found.`, status: 404 });
+            }
+    
+            res.render('admin/edit-course', { title: "New course", course, categories });
         });
-
-        const category = categories.find(x => x.id == course.typeId);
-        
-        if (!category) {
-          next({ message: `Course type ${ courseId } not found.`, status: 404 });
-        }
-
-        res.render('admin/add-course', { title: "New course", course, categories });
     });
+
+    
 });
 
 // add category 
 // @parentId optional parent id (category to add as subcategory to)
-router.post('/courses/add/:courseId', (req, res, next) => {
+router.post('/courses/edit/:courseId', (req, res, next) => {
     
     // TODO: validate model 
     const course = req.body;

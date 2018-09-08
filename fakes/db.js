@@ -49,10 +49,10 @@ module.exports = (data) => {
             cb(null, course);
         },
         update: (course, cb) => {
-            const old = data.courses.find(x => x.id == newValue.id);
+            const old = data.courses.find(x => x.id == course.id);
             if (!old) cb(new Error("object not found")); 
             else {
-                Object.assign(old, newValue);
+                Object.assign(old, course);
             }
             cb(null, old);
         }

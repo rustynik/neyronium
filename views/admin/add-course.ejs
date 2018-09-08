@@ -22,7 +22,7 @@
                 <select id="typeId" class="form-control" required name="typeId">
                     <% categories.forEach(cat => {    <!-- for all other categories -->
                         
-                        const selected = cat.id == cousre.typeId ? "selected" : null; %>
+                        const selected = cat.id == course.typeId ? "selected" : null; %>
                         
                         <option value="<%= cat.id %>" <%=selected %>>
                             <%= cat.title || "root" %>
