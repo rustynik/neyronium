@@ -42,8 +42,12 @@
                 <% }; %>
         
         <h2>Подкатегории</h2>
-            
-        <a href="../add-category/<%= id %>" class="btn btn-primary">Добавить категорию</a>
+        
+        <% if (id) { %>
+            <a href="../add-category/<%= id %>" class="btn btn-primary">Добавить категорию</a>
+        <% } else { %>
+            <a href="add-category" class="btn btn-primary">Добавить категорию</a>
+        <% } %>
 
         <% if (data.subCategories && data.subCategories.length > 0) { %>
             
