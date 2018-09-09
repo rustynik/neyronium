@@ -17,7 +17,7 @@
         
             <% if (id) { %>
                 
-                <a href="../courses/add/<%= id %>" class="btn btn-primary">Добавить курс</a>
+                <a href="../add-course/<%= id %>" class="btn btn-primary">Добавить курс</a>
             
             <% } %>
 
@@ -27,11 +27,11 @@
             <%- include("../partials/courses-list", { 
                 courses: data.courses, 
                 actions: [{
-                    name: "admin/courses/edit",
+                    name: "../edit-course",
                     displayName: "Изменить",
                     buttonClass: "success"
                 }, {
-                    name: "delete-course",
+                    name: "../delete-course",
                     displayName: "Удалить",
                     buttonClass: "danger"
                 }
@@ -43,7 +43,7 @@
         
         <h2>Подкатегории</h2>
             
-        <a href="category/add/<%= id %>" class="btn btn-primary">Добавить категорию</a>
+        <a href="../add-category/<%= id %>" class="btn btn-primary">Добавить категорию</a>
 
         <% if (data.subCategories && data.subCategories.length > 0) { %>
             
@@ -53,16 +53,16 @@
                 items: data.subCategories, 
                 
                 actions: [{
-                    name: "admin/categories",
+                    name: "",
                     displayName: "Enter",
                     buttonClass: "primary"
                 },
                 {
-                        name: "admin/categories/edit",
+                        name: "../edit-category",
                         displayName: "Изменить",
                         buttonClass: "success"
                     }, {
-                        name: "delete-category",
+                        name: "category/delete",
                         displayName: "Удалить",
                         buttonClass: "danger"
                     }

@@ -61,7 +61,7 @@ const coursesApi = {
             course._id = course.id;
 
             db.collection("courses")
-                .update(course, cb);
+                .update({ id : course.id }, course, cb);
         }, cb);
     }
 };
@@ -115,8 +115,8 @@ const courseTypesApi = {
             item._id = item.id;
 
             db.collection("categories")
-                .findOneAndUpdate({ _id: item.id }, item, { upsert: true }, cb);
-        });
+                .update({ id: item.id }, item, cb);
+        }, cb);
     }
 }
 
