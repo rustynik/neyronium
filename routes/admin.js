@@ -77,7 +77,7 @@ router.post('/add-category/:parentId?', (req, res, next) => {
         req.courseTypes.add(category, (err, data) => {
             if (err) return next(err);
             
-            res.redirect('../categories/' + (category.parentId || ""));
+            res.redirect('/admin/categories/' + (category.parentId || ""));
         });
 
     });
@@ -126,7 +126,7 @@ router.post('/edit-category/:categoryId', (req, res, next) => {
         req.courseTypes.update(category, (err, data) => {
             if (err) return next(err);
     
-            res.redirect('../categories/' + req.body.parentId);
+            res.redirect('/admin/categories/' + (req.body.parentId || ""));
         });
     });
 });
