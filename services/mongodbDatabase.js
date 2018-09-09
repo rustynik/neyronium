@@ -75,24 +75,18 @@ const courseTypesApi = {
         }, cb);
     },
 
-    findByParent: (parentId, cb) => {
+    findByParent: async function(parentId, cb) {
         console.log("trying to find by id " + (parentId === null ? "NULL" : parentId));
-        handleRequest((db, cb) => {
-            console.log(db);
-            db.collection("categories").find({ parentId: parentId }).toArray((err, subCategories) => {
-                if (err) cb(err);
-                console.log('found subcategories ', subCategories );
-                db.collection("courses").find({ typeId: parentId }).toArray((err, courses) => {
-                    if (err) cb(err);
-                    console.log('found courses ', courses );
-                    cb(null, {
-                        subCategories,
-                        courses
-                    });
-                })
+        
+        const client = await Client.connect(connectionString);
+        const db = client.db(dbName);
+        const subCategories = await db.collection("categories").find({ parentId: parentId }).toArray();
+        const courses = await db.collection("courses").find({ typeId: parentId }).toArray();
 
-            })
-        }, cb);
+        return {
+            subCategories,
+            courses
+        };
     },
     
     getAll: (cb) => {

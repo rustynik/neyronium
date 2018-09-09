@@ -1,12 +1,15 @@
 const express = require('express'),
-      router = express.Router();
+      router = express.Router(),
+      vk = require('../services/vk');
 
-  router.get('/', function(req, res, next) {
-    req.courseTypes.findByParent(null, (err, courses) => {
-      if (err) next(err);
-      
-      res.render('index', { title: 'Нейрониум', courses });
-    })
+  router.get('/', async function(req, res, next) {
+    
+    const courses = await req.courseTypes
+        .findByParent(null);
+    
+    const latestPosts = await vk.getLatestPosts();
+
+    res.render('index', { title: 'Нейрониум', courses, latestPosts });
   });
 
   router.get('/about', function(req, res, next) {
