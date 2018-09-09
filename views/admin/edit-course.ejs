@@ -9,12 +9,12 @@
         <form method="POST">
             
             <div class="form-group">
-                <label for="title">Nice title for your course</label>
-                <input type="text" class="form-control" required name="title" id="title" placeholder="category title" value="<%= course.title %>">
+                <label for="title">Наименование курса</label>
+                <input type="text" class="form-control" required name="title" id="title" placeholder="Наименование курса" value="<%= course.title %>">
             </div>  
             
             <div class="form-group">
-                <label for="typeId">Select category for your course</label>
+                <label for="typeId">Категория курса</label>
                 <select id="typeId" class="form-control" required name="typeId">
                     <% categories.forEach(cat => {    <!-- for all other categories -->
                         
@@ -29,12 +29,12 @@
             </div>
 
             <div class="form-group">
-                <label for="desciption">Nice description for your course</label>
+                <label for="desciption">Краткое описание курса</label>
                 <input type="text" class="form-control" required name="description" id="description" placeholder="category desciption" value="<%= course.description %>">
             </div>
             
             <div class="form-group">
-                <label for="widgetClass">Beautiful class for your class</label>
+                <label for="widgetClass">CSS class for your course</label>
                 <input type="text" class="form-control" name="widgetClass" id="widgetClass" placeholder="css class" value="<%= course.widgetClass %>">
             </div>  
 
@@ -44,13 +44,13 @@
             </div>  
 
             <div class="form-group">
-                    <label for="contents">Contents for your class</label>
-                    <textarea type="text" class="form-control" name="contents" id="contents" placeholder="contents">
+                    <label for="contents">Подробное описание курса</label>
+                    <textarea type="text" class="form-control" name="contents" id="contents" placeholder="содержание">
                             <%= course.contents %>"
                     </textarea>
             </div>  
             
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
 
         </form>
     </div>

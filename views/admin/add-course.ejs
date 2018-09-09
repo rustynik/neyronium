@@ -9,16 +9,16 @@
         <form method="POST">
             
             <div class="form-group">
-                <label for="id">unique identifier for your new course</label>
-                <input type="text" class="form-control" required name="id" id="id" placeholder="unique identifier">
+                <label for="id">Идентификатор (<strong>уникальный</strong>) для курса. Может содержать только латинские буквы и цифры без пробелов</label>
+                <input type="text" class="form-control" required name="id" id="id" placeholder="Напр., luboznateli1">
             </div>
             <div class="form-group">
-                <label for="title">Nice title for your new title</label>
-                <input type="text" class="form-control" required name="title" id="title" placeholder="category title">
+                <label for="title">Название курса</label>
+                <input type="text" class="form-control" required name="title" id="title" placeholder="Название курса">
             </div>  
             
             <div class="form-group">
-                <label for="typeId">Select category for your course</label>
+                <label for="typeId">Категория курса</label>
                 <select id="typeId" class="form-control" required name="typeId">
                     <% categories.forEach(cat => {    <!-- for all other categories -->
                         
@@ -33,12 +33,13 @@
             </div>
 
             <div class="form-group">
-                <label for="desciption">Nice description for your new course</label>
-                <input type="text" class="form-control" required name="description" id="description" placeholder="category desciption">
+                <label for="desciption">Краткое описание курса</label>
+                <input type="text" class="form-control" required name="description" 
+                id="description" placeholder="Краткое описание курса">
             </div>
             
             <div class="form-group">
-                <label for="widgetClass">Beautiful class for your new class</label>
+                <label for="widgetClass">Class for your new course</label>
                 <input type="text" class="form-control" name="widgetClass" id="widgetClass" placeholder="css class">
             </div>  
 
@@ -48,11 +49,11 @@
             </div>  
 
             <div class="form-group">
-                    <label for="contents">Background color for your class</label>
+                    <label for="contents">Подробное описание курса</label>
                     <textarea type="text" class="form-control" name="contents" id="contents" placeholder="contents"></textarea>
             </div>  
             
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
 
         </form>
     </div>
