@@ -1,41 +1,31 @@
 const express = require('express'),
       router = express.Router();
 
-router.get('/categories', (req, res, next) => {
+router.get('/categories', async function(req, res, next) {
     const category = {
         title: "Root",
         id: null
     };
-
-    req.courseTypes.findByParent(null, (err, data) => {
-        if (err) {
-          console.error(err);
-          return next(err);
-        }
-        console.log(data)
-        res.render('admin/categories', { title: category.title || "Корень", id: category.id, description: category.description || "", data: data });
-      });
+    const data = await req.courseTypes.findByParent(null).catch(next);
+    
+    res.render('admin/categories', { title: category.title || "Корень", id: category.id, description: category.description || "", data: data });
     
 });
 
-router.get('/categories/:categoryId', function(req, res, next) {
+router.get('/categories/:categoryId', async function(req, res, next) {
         const categoryId = req.params.categoryId;
 
-        req.courseTypes.findById(categoryId, (err, category) => {
+        req.courseTypes.findById(categoryId, async function (err, category) {
           if (err) return next(err);
           
           if (!category) {
             return next({ message: `Course type ${ categoryId } not found.`, status: 404 });
           }
     
-          req.courseTypes.findByParent(categoryId, (err, data) => {
-            if (err) {
-              return next(err);
-            }
+          const data = req.courseTypes.findByParent(categoryId).catch(next);
             
             res.render('admin/categories', { title: category.title || "Корень", id: category.id, description: category.description || "", data: data });
-          });
-    
+              
         }); 
 });
 
