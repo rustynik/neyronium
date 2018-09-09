@@ -5,7 +5,7 @@ const connectionString =
 
 //"mongodb://andrei:Maureau_2018@cluster0-shard-00-00-jya34.mongodb.net:27017,cluster0-shard-00-01-jya34.mongodb.net:27017,cluster0-shard-00-02-jya34.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
 
-const dbName = 'neyronium_pre';
+const dbName = 'neyronium_pre1';
 
 function handleRequest(func, cb) {
     Client.connect(connectionString, (err, client) => {
