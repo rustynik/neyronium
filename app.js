@@ -14,6 +14,10 @@ var applyRouter = require('./routes/apply');
 var detailsRouter = require('./routes/details');
 var adminRouter = require('./routes/admin');
 
+const notify = require('./services/email/notify');
+
+// TODO: vk read once then reread each x (in a separate process? don't need a separate process?)
+
 var app = express();
 
 // view engine setup
@@ -25,9 +29,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use((req, res, next) => {
+  
   req.courses = db.courses;
   req.courseTypes = db.courseTypes;
+  
+  req.services = {
+    notify
+  };
+
   next();
 });
 

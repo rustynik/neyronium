@@ -47,6 +47,16 @@ const coursesApi = {
                 .findOne({ id: id }, null, cb);
         }, cb);
     },
+    findById1: async (id) => {
+        
+        const client = await Client.connect(connectionString);
+        const db = client.db(dbName);
+        const course = await db.collection("courses").findOne({ id });
+        client.close();
+        
+        return course;
+    },
+
     add: (course, cb) => {
         handleRequest((db, cb) => {
             course._id = course.id;
@@ -74,7 +84,6 @@ const courseTypesApi = {
                 .findOne({ id: id }, null, cb);
         }, cb);
     },
-
     findByParent: async function(parentId, cb) {
         console.log("trying to find by id " + (parentId === null ? "NULL" : parentId));
         
@@ -82,6 +91,8 @@ const courseTypesApi = {
         const db = client.db(dbName);
         const subCategories = await db.collection("categories").find({ parentId: parentId }).toArray();
         const courses = await db.collection("courses").find({ typeId: parentId }).toArray();
+        
+        client.close();
 
         return {
             subCategories,
