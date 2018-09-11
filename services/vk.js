@@ -1,5 +1,5 @@
 const VK = require('vk-io').VK;
-
+const truncate = require('./../utils/strutils').truncate;
 async function getLatestPosts() {
     const vk = new VK();
  
@@ -20,10 +20,11 @@ function toModel(item) {
         date: new Date(item.date * 1000).toLocaleDateString(),
         id: "-143778251_" + item.id,
         link: "https://vk.com/wall" + "-143778251_" + item.id,
-        text: item.text
+        text: truncate(item.text
             .replace(/(#(\w|[А-Я])*)/gi, "<strong>$1</strong>")
             .replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '<a href="$1">$1</a>')
-            .substr(0, 255) + ' ...'
+        )
+            
     };
 }
 
