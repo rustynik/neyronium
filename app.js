@@ -7,8 +7,9 @@ var logger = require('morgan');
 var db = require("./services/mongodbDatabase");
 
 //var db = require('./fakes/db')(require('./fakes/fakeData'));
+var app = express();
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index')(app);
 var coursesRouter = require('./routes/courses');
 var applyRouter = require('./routes/apply');
 var detailsRouter = require('./routes/details');
@@ -18,7 +19,13 @@ const notify = require('./services/email/notify');
 
 // TODO: vk read once then reread each x (in a separate process? don't need a separate process?)
 
-var app = express();
+
+
+if (process.env.REDIS_URL) {
+  const client = require('redis').createClient(process.env.REDIS_URL);
+  const cache = require('express-redis-cache')({ client });
+  app.set('redis-cache', cache);
+} 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

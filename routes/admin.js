@@ -12,21 +12,20 @@ router.get('/categories', async function(req, res, next) {
     
 });
 
-router.get('/categories/:categoryId', async function(req, res, next) {
+router.get('/categories/:categoryId', function(req, res, next) {
         const categoryId = req.params.categoryId;
 
-        req.courseTypes.findById(categoryId, async function (err, category) {
-          if (err) return next(err);
-          
-          if (!category) {
-            return next({ message: `Course type ${ categoryId } not found.`, status: 404 });
-          }
-    
-          const data = req.courseTypes.findByParent(categoryId).catch(next);
-            
-            res.render('admin/categories', { title: category.title || "Корень", id: category.id, description: category.description || "", data: data });
-              
-        }); 
+        req.courseTypes.findById(categoryId, async (err, category) => {
+            if(err) return next(err);
+
+            if (!category) return next({ message: "Category not found", status: 404});
+            const data = await req.courseTypes.findByParent(categoryId).catch(next);
+
+        res.render('admin/categories', { title: category.title || "Корень", id: category.id, description: category.description || "", data: data });     
+
+        }) 
+
+        
 });
 
 router.get('/add-category/:parentId?', (req, res, next) => {
@@ -67,7 +66,7 @@ router.post('/add-category/:parentId?', (req, res, next) => {
         req.courseTypes.add(category, (err, data) => {
             if (err) return next(err);
             
-            res.redirect('/admin/categories/' + (category.parentId || ""));
+            res.redirect('/admin/categories/' + (req.body.parentId || ""));
         });
 
     });
