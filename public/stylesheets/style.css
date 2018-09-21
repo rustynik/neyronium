@@ -65,11 +65,15 @@ font-size: 14px;
 }
 
 .main-content {
+  position:absolute; 
+  top: 480px; 
   padding-left: 40px;
   padding-right: 40px;
 }
 
 @media only screen and (max-width: 600px) {
+  .main-content { top: 25%; }
+
   .neyronium-banner {
     position: absolute;
     width: 100%;
@@ -94,7 +98,7 @@ font-size: 14px;
     
     top: 180px;
     border-radius: 4px;
-    background-color: #E3E3E3;
+    background-color: #FFFFFF;
     background-image: url(/images/neuronium-banner.png);
     background-repeat: no-repeat;
     background-size: 100% ;
