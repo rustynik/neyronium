@@ -4,18 +4,32 @@
     <%- include("partials/head") %>
 </head>
 <body class="">        
-
-    <%- include("partials/nav") %>
+    <div class="neyronium-header">
+        <%- include("partials/nav") %>
+    </div>
 
     <%- include("partials/index/jumbotron", 
                 { title: "Нейрониум", subTitle: "Центр развития интеллекта" }) %>
     
+    <div class="neyronium-banner">
+
+    </div>
+
+    
     
 
-    <div class="w-100 p-10" >
+    <div style="position:absolute; top: 480px; " class="main-content">
         <div class="row">
-        <div class="col-sm-8">
-            <%- include("partials/index/content") %>
+        <div class="col-sm-9">
+
+                <h1><span class="h1">О центре</span></h1>
+
+                <p>Подготовка к школе от 4 до 8 лет (чтение, математика, подготовка руки к письму, развитие логики, памяти, внимания, коммуникативных навыков); Логопедические занятия (индивидуальные и групповые); Развивающие коррекционные занятия (задержка психического развития, умственная отсталость, аутизм); Консультации для родителей и педагогов.
+                    </p>
+                
+            <h1><span class="h1">Наши программы</span></h1>
+
+            
 
             <%- include("partials/categories-list", { 
             
@@ -30,7 +44,9 @@
             }) %>
     
         </div>
-        <div class="col-sm-4" style="height: 500px; overflow-y: scroll">
+        <div class="col-sm-3 aside" style="height: 500px; overflow-y: scroll">
+
+                <h1><span class="h1">News and articles</span></h1>
             <% latestPosts.forEach(item => { %>
                 <p><strong><%= item.date %></strong></p>
                 <p>
@@ -45,6 +61,9 @@
         
         
         </div>
+    </div>
+    <div class="neyronium-footer">
+            <%- include("partials/nav") %>
     </div>
 </body>
 </html>

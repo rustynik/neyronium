@@ -1,3 +1,4 @@
 <% actions && actions.forEach(action => { %>
-    <a href="<%= action.name ? action.name + "/" : "" %><%= id %>" class="btn btn-<%= action.buttonClass %>"><%= action.displayName %></a>
+    <a href="<%= action.name ? action.name + "/" : "" %><%= id %>" 
+    class="btn btn-<%= action.buttonClass %> card-primary-button"><%= action.displayName %></a>
 <% }); %>
