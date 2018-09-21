@@ -84,6 +84,16 @@ const courseTypesApi = {
                 .findOne({ id: id }, null, cb);
         }, cb);
     },
+    findById1: async (id) => {
+        
+        const client = await Client.connect(connectionString);
+        const db = client.db(dbName);
+        const result = await db.collection("categories").findOne({ id });
+        client.close();
+        
+        return result;
+    },
+
     findByParent: async function(parentId, cb) {
         console.log("trying to find by id " + (parentId === null ? "NULL" : parentId));
         

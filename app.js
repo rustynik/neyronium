@@ -1,37 +1,41 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const   createError = require('http-errors'),
+        express = require('express'),
+        path = require('path'),
+        cookieParser = require('cookie-parser'),
+        logger = require('morgan'),
+        app = express();
 
-var db = require("./services/mongodbDatabase");
+const   db = require("./services/mongodbDatabase"),
+        settings = require('./services/settings')(process.argv);
 
-//var db = require('./fakes/db')(require('./fakes/fakeData'));
-var app = express();
+app.set('app-settings', settings);
 
-var indexRouter = require('./routes/index')(app);
-var coursesRouter = require('./routes/courses');
+var guestRouter = require('./routes/index')(app, require('express').Router());
 var applyRouter = require('./routes/apply');
 var detailsRouter = require('./routes/details');
 var adminRouter = require('./routes/admin');
 
+const services = {
+  notify: require('./services/email/notify')
+};
+
+// TODO: remove 
 const notify = require('./services/email/notify');
-
-// TODO: vk read once then reread each x (in a separate process? don't need a separate process?)
-
 
 
 if (process.env.REDIS_URL) {
   const client = require('redis').createClient(process.env.REDIS_URL);
   const cache = require('express-redis-cache')({ client });
-  app.set('redis-cache', cache);
+  services.cache = cache;
 } 
+
+app.set('services', services);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+app.use(logger(settings.logLevel || 'dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -49,8 +53,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/courses', coursesRouter);
+app.use('/', guestRouter);
 app.use('/apply', applyRouter);
 app.use('/details', detailsRouter);
 app.use('/admin', adminRouter);
