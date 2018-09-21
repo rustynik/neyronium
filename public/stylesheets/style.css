@@ -72,7 +72,7 @@ font-size: 14px;
 }
 
 @media only screen and (max-width: 600px) {
-  .main-content { top: 25%; }
+  .main-content { top: 50%; }
 
   .neyronium-banner {
     position: absolute;
