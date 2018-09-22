@@ -19,9 +19,10 @@ const guestRouter = require('./routes/index')(app, require('express').Router()),
 
 let redisClient, redisCache
 if (settings.cache.useCache) {
-  redisClient = redis.createClient(setting.cache.connectionString || process.env.REDIS_URL);
-  redisClient.flushall((err) => logger.error("Error clearing redis", err));
-  redisCache = cache({ redisClient });
+  console.log(process.env.REDIS_URL || settings.cache.connectionString);
+  redisClient = redis.createClient(process.env.REDIS_URL || settings.cache.connectionString);
+  redisClient.flushall();
+  redisCache = cache({ client: redisClient });
 }
 
 app.set('services', {

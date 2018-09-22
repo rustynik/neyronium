@@ -1,7 +1,7 @@
 {
     "cache": {
         "useCache": true,
-        "connectionString": "redis://h:p666c4b076a7cbec1b92cce5d6f06f96ed0a38ee0a48984305dff035f12341026@ec2-52-202-245-120.compute-1.amazonaws.com:11809"
+        "connectionString": null
     }, 
     "mongodb": {
         "connectionString": "mongodb+srv://andrei:pGMuBxVg1OkojeCm@cluster0-jya34.mongodb.net/test?retryWrites=true",
