@@ -82,9 +82,14 @@ font-size: 14px;
 }
 
 @media only screen and (max-width: 600px) {
-  
+  li.categories-list-item {
+    width: 100%;
+    display: block;
+  }
   .neyronium-card {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .main-content-main { top: 60%; }
