@@ -15,9 +15,9 @@ const index = async (req, res, next) => {
 const routerFactory = (app) => {
   
   const cache = app.get('redis-cache');
-  if (cache)
-    router.get('/', app.get('redis-cache').route(), index);
-  else 
+  //if (cache)
+    //router.get('/', app.get('redis-cache').route(), index);
+  //else 
   router.get('/', index);
 
   router.get('/about', function(req, res, next) {

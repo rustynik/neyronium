@@ -22,9 +22,9 @@ const notify = require('./services/email/notify');
 
 
 if (process.env.REDIS_URL) {
-  const client = require('redis').createClient(process.env.REDIS_URL);
-  const cache = require('express-redis-cache')({ client });
-  app.set('redis-cache', cache);
+  //const client = require('redis').createClient(process.env.REDIS_URL);
+  //const cache = require('express-redis-cache')({ client });
+  //app.set('redis-cache', cache);
 } 
 
 // view engine setup

@@ -78,6 +78,11 @@ font-size: 14px;
 }
 
 @media only screen and (max-width: 600px) {
+  
+  .neyronium-card {
+    width: 100%;
+  }
+  
   .main-content { top: 60%; }
 
   .neyronium-banner {

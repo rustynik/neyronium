@@ -3,16 +3,21 @@
 <head>
     <%- include("partials/head") %>
 </head>
-<body class="happy-children">
+<body>
     
-    <%- include("partials/nav") %>
-    
-    <%- include("partials/index/jumbotron", { title: "Курсы", subTitle: title }) %>
+    <div class="neyronium-header">
+        <%- include("partials/nav") %>
+    </div>
 
-    <div class="container">
-        <h2><%= description %></h2>
+    <%- include("partials/index/jumbotron", 
+                { title: "", subTitle: "" }) %>
+    
+    <div class="main-content">
+        
         <% if (data.courses && data.courses.length) { %>
-            <h2>Курсы</h2>
+            
+            <h1><span class="h1">Курсыjj</span></h1>
+
             <%- include("partials/courses-list", { courses: data.courses, actions: [
                 {
                     name: "../details",
@@ -23,7 +28,8 @@
         <% } %>
         
         <% if (data.subCategories && data.subCategories.length > 0) { %>
-            <h2>Подкатегории</h2>
+            
+            <h1><span class="h1">Подкатегории</span></h1>
 
             <%- include("partials/categories-list", { 
                 
