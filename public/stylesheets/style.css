@@ -1,84 +1,233 @@
-.happy-children {
-  background-image: url(../images/happykinder.png);
-  background-position: right;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-color: white;
+body {
+  background-color: #FFFFFF;
+  font-family: Roboto;
 }
 
-.jumbotron {
-  background-color: cadetblue;
-  color: #343a40;
+.neyronium-header {
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background: #808EDA;
+
+  font-family: Roboto;
+  font-style: regular;
 }
-ul.nav {
-  background-color: cadetblue;
-  border-bottom: solid #343a40 1px;
+
+.neyronium-navbar {
+  color: white;
+  background: #808EDA !important;
+  font-family: Roboto !important;
+  font-style: regular;
 }
-@media screen and (max-width: 320px)  {
-  ul.nav {
-    font-size: x-small;
+
+.neyronium-header a {
+  color: white;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.neyronium-brand {
+  position: absolute;
+  width: 71px;
+  height: 71px;
+  left: 46px;
+  top: 67px;
+  border-radius: 100px;
+}
+
+.neyronium-title {
+  position: absolute;
+  width: 161px;
+  height: 36px;
+  left: 139px;
+  top: 73px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 30px;
+  
+  color: #41485D;
+}
+
+.neyronium-subtitle {
+  position: absolute;
+width: 180px;
+height: 17px;
+left: 140px;
+top: 113px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+font-size: 14px;
+
+  color: #676D7D;
+}
+
+.main-content {
+  position:absolute; 
+  padding-left: 40px;
+  padding-right: 40px;
+  top: 150px;
+}
+
+.main-content-main {
+  top: 480px; 
+}
+
+@media only screen and (max-width: 600px) {
+  li.categories-list-item {
+    width: 100%;
+    display: block;
+  }
+  .neyronium-card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .main-content-main { top: 60%; }
+
+  .neyronium-banner {
+    position: absolute;
+    width: 100%;
+    height: 21%;
+    
+    top: 180px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    background-image: url(/images/neuronium-banner.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+  
+  }
+}
+
+@media only screen and (min-width:  600px) {
+  
+  .neyronium-card {
+    width: 18rem;
   }
 
-  h2.display-4gi {
-    font-size: x-small;
+  .neyronium-banner {
+    position: absolute;
+    width: 100%;
+    height: 265px;
+    
+    top: 160px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    background-image: url(/images/neuronium-banner.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+  
   }
 }
 
-ul.nav li a {
-  color: #343a40;
-}
-.jumbotron a {
-  color: cadetblue;
+
+h1 {
+  margin-bottom: 39px;
 }
 
-.rainbow_school {
-  background-image: url(../images/rainbow.jpg);
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-position: right bottom;
+.h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 20px;
+  padding-bottom: 13px;
+  color: #7083E5;
   
-}
-.books {
-  background-image: url(../images/books.jpg);
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-position: right bottom;
-  
-}
-.luboznateli {
-  background-image: url(../images/rocket.jpg);
-  background-size: 50px 50px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-color: white;
+  border-bottom: 5px solid #808EDA;
   
 }
 
-.calligraphy {
-  background-image: url(../images/calli.jpg);
-  background-size: 50px 50px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-color: white;
+p {
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+  font-size: 16px;
+  color: #41485D;
   
 }
-.red {
-  background-color: #dd3344;
+
+.neyronium-card {
+  border-radius: 4px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05), 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid  #2D9CDB;
 }
 
-.blue {
-  background-color: #aaaadd;
-}
-.yellow {
-  background-color: gold;
+.card-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 22px;
+
+  color: #2D9CDB;
 }
 
-.green {
-  background-color: yellowgreen;
+.card-subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+
+  color: #676D7D;
 }
 
-.magenta {
-  background-color: magenta;
+.card-primary-button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 13px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+.aside a {
+  color: #7083E5;
+}
+.aside p {
+  font-size: 14px;
+  line-height: 1.2;
+
+}
+
+.neyronium-footer {
+
+  margin-top: 8px;
+  height: 35px;
+  background: #676D7D; 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding-top: 5px;
+  padding-left: 40px;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background-color: #808EDA;
+}
+.neyronium-footer a {
+  color: white;
+  font-family: Roboto;
+  font-size: 14px;
 }

@@ -17,6 +17,7 @@ const routes = {
         
         const data = await req.courseTypes.findByParent(req.courseType.id).catch(next);
 
+<<<<<<< HEAD
         res.render('courses', 
         { 
             title: req.courseType.title, 
@@ -57,6 +58,15 @@ const routerFactory = (app, router) => {
     router.get('/', routes.index);
 
     router.get('/courses/:courseTypeId', routes.courses);
+=======
+const routerFactory = (app) => {
+  
+  const cache = app.get('redis-cache');
+  //if (cache)
+    //router.get('/', app.get('redis-cache').route(), index);
+  //else 
+  router.get('/', index);
+>>>>>>> master
 
     router.get('/about', routes.about);
 
