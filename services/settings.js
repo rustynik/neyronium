@@ -1,24 +1,29 @@
-const   fs = require('fs'), 
-        combine = require('path').join,
-        deepmerge = require('deepmerge');
+const fs = require('fs'),
+    combine = require('path').join,
+    deepmerge = require('deepmerge');
+/**
+ * gets application settings by merging basic settings file located at root path 
+ * and (optionally) another settings path designated by configuration name 
+ * If no configuration name is provided, basic settings are returned
+ * @param {*} rootPath
+ * @param {*} configurationName
+ * @returns settings object
+ */
+function read(rootPath, configurationName) {
 
-// TODO: use cli arguments to override settings 
-module.exports = (_) => {
+    return deepmerge(
+        readJson(makePath(rootPath, null)),
+        configurationName ? readJson(makePath(rootPath, configurationName)) : {}
+    );
+}
 
-    const   settingsPath = combine(process.cwd(), 'settings.json'),
-            settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
-    console.log(process.env)
-    if (process.env.CONFIGURATION) {
-        console.log(`configuration ${ process.env.CONFIGURATION }`);
-        const merge = combine(process.cwd(), 
-            `settings.${ process.env.CONFIGURATION }.json`);
+function readJson(path) {
+    return JSON.parse(fs.readFileSync(path, 'utf8'));
+}
 
-        if (fs.existsSync(merge)) {
-            deepmerge(settings, JSON.parse(fs.readFileSync(merge, 'utf8')));
-        }
-    }
+function makePath(rootPath, configurationName) {
+    const fileName = configurationName ? `settings.${ configurationName }.json` : 'settings.json';
+    return combine(rootPath, fileName);
+}
 
-    console.log(settings);
-
-    return settings;
-};
+module.exports = { read };

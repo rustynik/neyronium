@@ -3,35 +3,33 @@ const   createError = require('http-errors'),
         path = require('path'),
         cookieParser = require('cookie-parser'),
         logger = require('morgan'),
-        app = express();
+        app = express(),
+        redis = require('redis'),
+        cache = require('express-redis-cache');
 
-const   db = require("./services/mongodbDatabase"),
-        settings = require('./services/settings')(process.argv);
+const   settings = require('./services/settings').read(process.cwd(), process.env.CONFIGURATION),
+        db = require("./services/mongodbDatabase")(settings.mongodb);
 
 app.set('app-settings', settings);
 
-var guestRouter = require('./routes/index')(app, require('express').Router());
-var applyRouter = require('./routes/apply');
-var detailsRouter = require('./routes/details');
-var adminRouter = require('./routes/admin');
+const guestRouter = require('./routes/index')(app, require('express').Router()),
+  applyRouter = require('./routes/apply'),
+  detailsRouter = require('./routes/details'),
+  adminRouter = require('./routes/admin')(app, require('express').Router());
 
-const services = {
-  notify: require('./services/email/notify')
-};
+let redisClient, redisCache
+if (settings.cache.useCache) {
+  redisClient = redis.createClient(process.env.REDIS_URL);
+  redisClient.flushall((err) => logger.error("Error clearing redis", err));
+  redisCache = cache({ redisClient });
+}
 
-// TODO: remove 
-const notify = require('./services/email/notify');
+app.set('services', {
+  notify: require('./services/email/notify'),
+  cache: redisCache,
+  redisClient
+});
 
-
-if (process.env.REDIS_URL) {
-  const client = require('redis').createClient(process.env.REDIS_URL);
-  const cache = require('express-redis-cache')({ client });
-  services.cache = cache;
-} 
-
-app.set('services', services);
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -46,9 +44,9 @@ app.use((req, res, next) => {
   req.courses = db.courses;
   req.courseTypes = db.courseTypes;
   
-  req.services = {
-    notify
-  };
+  // no need to inject services into app
+  req.services = app.get('services');
+  req.app = app;
 
   next();
 });

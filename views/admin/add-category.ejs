@@ -37,9 +37,12 @@
             </div>
             
             <div class="form-group">
-                <label for="widgetClass">CSS class</label>
-                <input type="text" class="form-control" name="widgetClass" id="widgetClass" placeholder="css class">
-            </div>  
+                <label for="contents">Подробное описание</label>
+                <textarea type="text" class="form-control" name="contents" id="contents" 
+                required placeholder="содержание">
+                        <%= cat.contents %>"
+                </textarea>
+            </div>
 
             <div class="form-group">
                     <label for="widgetClass">Background color</label>

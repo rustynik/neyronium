@@ -1,11 +1,14 @@
 {
     "cache": {
-        "enabled": false,
-        "connectionString": null,
-        "ttl": 0
+        "useCache": true,
+        "connectionString": null
     }, 
     "mongodb": {
-        "connectionString": ""
+        "connectionString": "mongodb+srv://andrei:pGMuBxVg1OkojeCm@cluster0-jya34.mongodb.net/test?retryWrites=true",
+        "dbName": "testdb"
+    },
+    "mail": {
+        
     },
     "enableAdminAccess": true
 }
