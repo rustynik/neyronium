@@ -14,9 +14,15 @@
     
     <div class="main-content">
         
+        <h1><span class="h1"><%= title %></span></h1>
+        
+        <p>
+            <%- contents || description %>
+        <p>
+
         <% if (data.courses && data.courses.length) { %>
             
-            <h1><span class="h1">Курсыjj</span></h1>
+            <h1><span class="h1">Занятия</span></h1>
 
             <%- include("partials/courses-list", { courses: data.courses, actions: [
                 {

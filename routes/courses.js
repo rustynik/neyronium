@@ -13,7 +13,11 @@ const express = require('express'),
 
       const data = await req.courseTypes.findByParent(type).catch(next);
       
-      res.render('courses', { title: courseType.title, description: courseType.description || "", data: data });
+      res.render('courses', { 
+        title: courseType.title, 
+        description: courseType.description || "", 
+        contents: courseType.contents || "",
+        data: data });
       
     });
 

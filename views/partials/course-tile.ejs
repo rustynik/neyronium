@@ -1,11 +1,14 @@
-<div class="card <%= item.widgetClass %>" style="width: 18rem;">
-    <div class="card-body" style="background-color: <%= item.bgColor %>">
-        <h5 class="card-title"><%= item.title %></h5>
+<div 
+    class="card neyronium-card"
+    style="border-left: 4px solid <%= item.bgColor || '#2D9CDB' %>;"
+>
+    <div class="card-body">
+        <h5 class="card-title" style="color: <%= item.bgColor || '#2D9CDB' %>;"><%= item.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= item.description %></h6>
 
         <%- include("actions-menu", {
             actions,
             id: item.id
-        }) %>              
+        }) %>       
     </div>
 </div>
