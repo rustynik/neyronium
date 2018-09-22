@@ -4,23 +4,29 @@ body {
 }
 
 .neyronium-header {
+  z-index: 1000;
   position: absolute;
   width: 100%;
-  height: 35px;
   left: 0px;
   top: 0px;
   background: #808EDA;
 
   font-family: Roboto;
   font-style: regular;
-  
-  
+}
+
+.neyronium-navbar {
+  color: white;
+  background: #808EDA !important;
+  font-family: Roboto !important;
+  font-style: regular;
 }
 
 .neyronium-header a {
   color: white;
   font-family: Roboto;
   font-size: 14px;
+  line-height: 1.2;
 }
 
 .neyronium-brand {
@@ -91,6 +97,11 @@ font-size: 14px;
 }
 
 @media only screen and (min-width:  600px) {
+  
+  .neyronium-card {
+    width: 18rem;
+  }
+
   .neyronium-banner {
     position: absolute;
     width: 100%;
@@ -177,16 +188,27 @@ p {
 }
 .aside p {
   font-size: 14px;
+  line-height: 1.2;
+
 }
 
 .neyronium-footer {
+
+  margin-top: 8px;
+  height: 35px;
   background: #676D7D; 
   position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding-top: 5px;
+  padding-left: 40px;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 1.2;
 }
+
 .btn-primary {
   background-color: #808EDA;
 }
