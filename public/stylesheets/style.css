@@ -5,61 +5,52 @@ body {
 
 .neyronium-header {
   z-index: 1000;
-  position: absolute;
   width: 100%;
-  left: 0px;
-  top: 0px;
   background: #808EDA;
-
-  font-family: Roboto;
-  font-style: regular;
 }
 
 .neyronium-navbar {
-  color: white;
+  color: white !important;
   background: #808EDA !important;
   font-family: Roboto !important;
   font-style: regular;
 }
 
 .neyronium-header a {
-  color: white;
+  color: white !important;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
 .neyronium-brand {
-  position: absolute;
+  float: left;
   width: 71px;
   height: 71px;
-  left: 46px;
-  top: 67px;
+  margin-left: 46px;
+  margin-top: 10px;
   border-radius: 100px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
 }
 
 .neyronium-title {
-  position: absolute;
+  
   width: 161px;
   height: 36px;
-  left: 139px;
-  top: 73px;
-  
-  font-family: Roboto;
-  font-style: normal;
+  margin-left: 130px;
+  margin-top: 20px;
   font-weight: 500;
   line-height: normal;
   font-size: 30px;
-  
   color: #41485D;
 }
 
 .neyronium-subtitle {
-  position: absolute;
+  
 width: 180px;
 height: 17px;
-left: 140px;
-top: 113px;
+margin-left: 130px;
 
 font-family: Roboto;
 font-style: normal;
@@ -71,35 +62,32 @@ font-size: 14px;
 }
 
 .main-content {
-  position:absolute; 
   padding-left: 40px;
   padding-right: 40px;
-  top: 150px;
+  
 }
 
-.main-content-main {
-  top: 480px; 
-}
 
 @media only screen and (max-width: 600px) {
+  
   li.categories-list-item {
     width: 100%;
     display: block;
   }
+
   .neyronium-card {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
   
-  .main-content-main { top: 60%; }
-
   .neyronium-banner {
-    position: absolute;
-    width: 100%;
-    height: 21%;
     
-    top: 180px;
+    width: 100%;
+    height: 85px;
+    /*height: 21%;*/
+    
+    
     border-radius: 4px;
     background-color: #FFFFFF;
     background-image: url(/images/neuronium-banner.png);
@@ -117,11 +105,10 @@ font-size: 14px;
   }
 
   .neyronium-banner {
-    position: absolute;
+    
     width: 100%;
     height: 265px;
     
-    top: 160px;
     border-radius: 4px;
     background-color: #FFFFFF;
     background-image: url(/images/neuronium-banner.png);
@@ -140,12 +127,12 @@ h1 {
 .h1 {
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  
   line-height: normal;
   font-size: 20px;
   padding-bottom: 13px;
-  color: #7083E5;
-  
+  /*color: #7083E5;*/
+  color: #41485D;  
   border-bottom: 5px solid #808EDA;
   
 }
@@ -164,7 +151,7 @@ p {
 .neyronium-card {
   border-radius: 4px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05), 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid  #2D9CDB;
+  border-left: 14px solid  #2D9CDB;
 }
 
 .card-title {
