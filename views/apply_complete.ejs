@@ -9,14 +9,39 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 </head>
 <body class="container">
-    <div class="row">
+    
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include("partials/head") %>
+</head>
+<body>        
+    <div class="neyronium-header">
+        <%- include("partials/nav") %>
+    </div>
+    
+    <%- include("partials/index/jumbotron", 
+                { title: "Нейрониум", subTitle: "Центр развития интеллекта" }) %>
+    
+    <div class="main-content main-content-main">
+        <div class="row">
             <div class="alert alert-success col-sm-12">
                     <p><strong>Ваша заявка отправлена</strong></p>
                     
             </div>
             <p>Мы обязательно свяжемся с Вами в самое ближайшее время. </p>
             <a href="/" class="btn btn-primary">К выбору курсов</a>
-        </div>
+        </div>       
+    </div>
     
+    <div class="neyronium-footer" style="text-align: center;">
+        
+        <strong>Нейрониум</strong>&nbsp;                             тел. +7 900 500 40 35 neyro@mail.com<br>
+        <span style="font-size: smaller">Центр развития интеллекта </span>    
+    </div>
 </body>
 </html>

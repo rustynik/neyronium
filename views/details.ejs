@@ -3,11 +3,14 @@
 <head>
     <%- include("partials/head") %>
 </head>
-<body class="happy-children">
-    <%- include("partials/nav") %>
-
+<body>
+    <div class="neyronium-header">
+        <%- include("partials/nav") %>
+    </div>
+    
     <%- include("partials/index/jumbotron", 
-                { title: "Подробно", subTitle: course.title }) %>
+                { title: "Нейрониум", subTitle: "Центр развития интеллекта" }) %>
+    
     
     <div class="main-content">
         <h1><span class="h1"><%= course.title %></span></h1>
@@ -17,5 +20,11 @@
         <a href="#" class="btn btn-secondary" onclick="history.back()">Назад</a>    
     </div>
     
+    <div class="neyronium-footer" style="text-align: center;">
+        
+        <strong>Нейрониум</strong>&nbsp;                             тел. +7 900 500 40 35 neyro@mail.com<br>
+        <span style="font-size: smaller">Центр развития интеллекта </span>    
+    </div>
+
 </body>
 </html>

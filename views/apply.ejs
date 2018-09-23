@@ -3,12 +3,17 @@
 <head>
     <%- include("partials/head") %>
 </head>
-<body class="happy-children">
+<body>
+    <div class="neyronium-header">
         <%- include("partials/nav") %>
+    </div>
+    
+    <%- include("partials/index/jumbotron", 
+                { title: "Нейрониум", subTitle: "Центр развития интеллекта" }) %>
+    
+    
 
-        <%- include("partials/index/jumbotron", 
-                    { title: "Заявка", subTitle: course.title }) %>
-        <div class="container">
+        <div class="main-content main-content-main">
     
         <form action="" method="POST" >
             <div class="form-group">
@@ -40,6 +45,11 @@
             <p>Я свяжусь с Вами по указанному адресу электронной почты или номеру телефона.</p>
             <button type="submit" class="btn btn-primary" id="submit">Отправить</button>
         </form>
+    </div>
+    <div class="neyronium-footer" style="text-align: center;">
+        
+        <strong>Нейрониум</strong>&nbsp;                             тел. +7 900 500 40 35 neyro@mail.com<br>
+        <span style="font-size: smaller">Центр развития интеллекта </span>    
     </div>
     <script>
         function toggleRequired(el, another) {
