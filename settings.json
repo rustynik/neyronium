@@ -1,6 +1,6 @@
 {
     "cache": {
-        "useCache": true,
+        "useCache": false,
         "connectionString": null
     }, 
     "mongodb": {
