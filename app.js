@@ -1,5 +1,6 @@
 const   createError = require('http-errors'),
         express = require('express'),
+        expressLayouts = require('express-ejs-layouts'),
         path = require('path'),
         cookieParser = require('cookie-parser'),
         logger = require('morgan'),
@@ -30,6 +31,8 @@ app.set('services', {
   cache: redisCache,
   redisClient
 });
+
+app.use(expressLayouts);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

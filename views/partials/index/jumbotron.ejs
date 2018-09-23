@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-8">
         <img src="/images/brand.svg" class="neyronium-brand">
         <div class="neyronium-title">
     Нейрониум
@@ -8,14 +8,14 @@
     Центр развития интеллекта
 </div>
     </div>
-    <div class="col-md-3">
-        <ul class="list-unstyled" style="margin-top: 20px; margin-left: 50px;">
+    <div class="col-4">
+        <ul class="list-unstyled" >
             <li style="font-family: Roboto;
             font-style: normal;
             font-weight: 300;
             line-height: normal;
             font-size: 20px;
-            
+            margin-top: 20px; 
             color: #41485D;">
                     +8 800 800 80 80
             </li>
@@ -33,11 +33,24 @@
                     </a>
             </li>
             <li>
-                    <span class="fa fa-instagram" style="color: red; width: 20px;"></span>
-                    <span class="fa fa-vk" style="color: #4c75a3;  width: 20px;"></span>
-                    <span class="fa fa-facebook" style="color: #3B5998;"></span>
-                    
-                    
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                            <span class="fa fa-twitter" style="color: #1da1f2; width: 20px; cursor: pointer;"
+                                    onclick="
+                                    javascript:window.open('https://twitter.com/share?text='+encodeURIComponent('Центр развития интеллекта')+'&amp;url='+encodeURIComponent('http://www.neyronium.pro'),'Twitter-dialog','width=626,height=436'); return false;">
+
+                            </span>
+                    </li>
+                    <li class="list-inline-item">
+                            <div id="vk_share_button" style="margin-top: 10px;"></div>    
+                    </li>
+                    <li class="list-inline-item">
+                            <!-- <div class="fb-share-button" data-href="http://www.neyronium.pro" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.neyronium.pro%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">поделиться</a></div> -->
+                            <i class="fa fa-facebook" style="color: #3b5998; cursor: pointer;" 
+                            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://www.neyronium.pro'),'facebook-share-dialog','width=626,height=436'); return false;"></i>
+                            
+                    </li>
+                </ul>
                     
             </li>
         </ul>
@@ -46,5 +59,11 @@
 </div>
 
 
-    
+<script>
+    document.getElementById('vk_share_button').innerHTML = VK.Share.button(
+        'http://www.neyronium.pro', {
+            type: 'custom', 
+            image: 'http://neyronium.pro/images/neuronium-banner.png',
+            text: '<i class="fa fa-vk"></i>'}); 
+</script>
     
