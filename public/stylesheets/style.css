@@ -85,7 +85,6 @@ font-size: 14px;
   padding-right: 40px;
 }
 
-
 @media only screen and (max-width: 600px) {
   
   .neyronium-contacts {
@@ -99,7 +98,6 @@ font-size: 14px;
 
   .neyronium-card {
     width: 100%;
-    margin: 0 auto auto 20px;
   }
 }
 
@@ -124,6 +122,26 @@ font-size: 14px;
   }
   
 }
+
+@media only screen and (min-width:  900px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .non-mobile-only {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width:  900px) {
+  .mobile-only {
+    display: none;
+  }
+  .non-mobile-only {
+    visibility: visible;
+  }
+}
+
 @media only screen and (min-width:  900px) {
   .neyronium-banner {
     height: 265px;
@@ -168,6 +186,7 @@ p {
   border-radius: 4px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05), 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-left: 14px solid  #2D9CDB;
+  margin: 0 auto auto 20px;
 }
 
 .card-title {
