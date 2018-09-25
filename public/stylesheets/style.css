@@ -125,20 +125,20 @@ font-size: 14px;
 
 @media only screen and (min-width:  900px) {
   .mobile-only {
-    display: block;
+    display: none;
   }
 
   .non-mobile-only {
-    visibility: hidden;
+    visibility: visible;
   }
 }
 
 @media only screen and (max-width:  900px) {
   .mobile-only {
-    display: none;
+    display: block;
   }
   .non-mobile-only {
-    visibility: visible;
+    visibility: hidden;
   }
 }
 
