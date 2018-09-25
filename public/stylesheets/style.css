@@ -90,7 +90,10 @@ font-size: 14px;
   .neyronium-contacts {
     font-size: smaller !important;
   }
-
+  .neyronium-subtitle {
+    font-size: 12px; 
+  }
+  
   li.categories-list-item {
     width: 100%;
     display: block;
@@ -129,7 +132,7 @@ font-size: 14px;
   }
 
   .non-mobile-only {
-    visibility: visible;
+    display: block;
   }
 }
 
@@ -138,7 +141,7 @@ font-size: 14px;
     display: block;
   }
   .non-mobile-only {
-    visibility: hidden;
+    display: none;
   }
 }
 
