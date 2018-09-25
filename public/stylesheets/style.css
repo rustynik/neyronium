@@ -99,11 +99,8 @@ font-size: 14px;
 
   .neyronium-card {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto auto 20px;
   }
-  
-  
 }
 
 @media only screen and (max-width:  600px) {
@@ -111,7 +108,7 @@ font-size: 14px;
   .neyronium-banner {
     max-height: 185px;
   }
-  
+
   .neyronium-card {
     width: 18rem;
   }
@@ -119,7 +116,9 @@ font-size: 14px;
 }
 
 @media only screen and (min-width:  600px) {
-  
+  .neyronium-banner {
+    height: 265px;
+  }
   .neyronium-card {
     width: 18rem;
   }
