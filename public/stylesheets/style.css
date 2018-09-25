@@ -113,11 +113,19 @@ font-size: 14px;
   
   .neyronium-banner {
     max-height: 185px;
+    margin-top: 20xp;
   }
 
   .neyronium-card {
     width: 18rem;
     margin: 0 auto 20px auto;
+  }
+
+  .neyronium-contacts {
+    display: inline;
+    position: fixed;
+    top: 4px;
+    left: 150px;
   }
   
 }
