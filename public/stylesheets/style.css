@@ -86,11 +86,7 @@ font-size: 14px;
 }
 
 @media only screen and (max-width: 600px) {
-  .neyronium-header {
-    position: absolute;
-    left:0;
-    top:0;
-  }
+  
   .main-content {
     padding-left: 20px;
     padding-right: 20px;
