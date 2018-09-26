@@ -120,7 +120,9 @@ font-size: 14px;
     background-size: cover;
     background-image: url(/images/male_child.png);
   }
-
+.fa-vk {
+  color: white !important;
+}
   .neyronium-card {
     width: 18rem;
     margin: 0 auto 20px auto;
