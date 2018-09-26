@@ -16,6 +16,54 @@
 
     <div class="neyronium-header">
         <% include partials/nav %>
+
+        <div class="mobile-only" style="position: absolute; 
+top: 8px;
+left: 100px;
+
+color: white;
+">
+<div class="row" style="text-align: right">
+        <div class="col-7">
+                <div style="font-size:12px;">
+                        <a>info@neyronium.pro</a>
+                </div>    
+            <div style="font-size:14px;">
+                        +7 800 800 80 80
+                </div>
+                
+        </div>
+        <div class="col-5" style="text-align:left;">
+
+                <ul class="list-inline" style="font-size:18px;">
+                        <li class="list-inline-item">
+                                <span class="fa fa-twitter" 
+                                style="color:white; width: 20px; cursor: pointer;"
+                                        onclick="
+                                        javascript:window.open('https://twitter.com/share?text='+encodeURIComponent('Центр развития интеллекта')+'&amp;url='+encodeURIComponent('http://www.neyronium.pro'),'Twitter-dialog','width=626,height=436'); return false;">
+    
+                                </span>
+                        </li>
+                        <li class="list-inline-item">
+                                <div class="vk_share_button" 
+                                style="margin-top: 7px; color:white;"></div>    
+                        </li>
+                        <li class="list-inline-item">
+                                <!-- <div class="fb-share-button" data-href="http://www.neyronium.pro" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.neyronium.pro%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">поделиться</a></div> -->
+                                <i class="fa fa-facebook" style="color: white; cursor: pointer;" 
+                                onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://www.neyronium.pro'),'facebook-share-dialog','width=626,height=436'); return false;"></i>
+                                
+                        </li>
+                    </ul>
+
+
+
+        </div>
+</div>
+
+
+</div>
+
     </div>
     
     <%- include("partials/index/jumbotron")%>

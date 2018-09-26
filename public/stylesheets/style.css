@@ -5,6 +5,7 @@ body {
 
 .neyronium-header {
   z-index: 1000;
+  
   width: 100%;
   background: #808EDA;
 }
@@ -14,6 +15,7 @@ body {
   background: #808EDA !important;
   font-family: Roboto !important;
   font-style: regular;
+  
 }
 
 .neyronium-header a {
