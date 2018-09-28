@@ -1,6 +1,6 @@
 module.exports = { truncate };
 
-const MAX_LENGTH = 1000;
+const MAX_LENGTH = 300;
 
 function truncate(str) {
     str = str || '';
