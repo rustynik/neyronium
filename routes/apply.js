@@ -22,7 +22,7 @@ router.post('/:courseId', async (req, res, next) => {
             course
         });
 
-    res.render('apply_complete', { courseName: course.title });
+    res.render('apply_complete', { title: "Заявка отправлена", courseName: course.title });
 }); 
 
 module.exports = router;
