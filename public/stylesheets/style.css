@@ -89,6 +89,13 @@ font-size: 14px;
 
 @media only screen and (max-width: 600px) {
   
+  .mobile-only {
+    display: block;
+  }
+  .non-mobile-only {
+    display: none;
+  }
+
   .main-content {
     padding-left: 20px;
     padding-right: 20px;
@@ -148,9 +155,6 @@ font-size: 14px;
     margin: 0 auto 20px auto;
   }
   
-}
-
-@media only screen and (min-width:  900px) {
   .mobile-only {
     display: none;
   }
@@ -160,14 +164,6 @@ font-size: 14px;
   }
 }
 
-@media only screen and (max-width:  900px) {
-  .mobile-only {
-    display: block;
-  }
-  .non-mobile-only {
-    display: none;
-  }
-}
 
 @media only screen and (min-width:  900px) {
   .neyronium-banner {
