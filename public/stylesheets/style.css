@@ -87,15 +87,15 @@ font-size: 14px;
   padding-right: 40px;
 }
 
-@media only screen and (max-width: 600px) {
-  
-  .mobile-only {
-    display: block;
-  }
-  .non-mobile-only {
-    display: none;
-  }
+.mobile-only {
+  display: block;
+}
+.non-mobile-only {
+  display: none;
+}
 
+@media (max-width: 600px) {
+  
   .main-content {
     padding-left: 20px;
     padding-right: 20px;
@@ -116,9 +116,6 @@ font-size: 14px;
     width: 100%;
     margin: 0 auto 20px auto;
   }
-}
-
-@media only screen and (max-width:  600px) {
   
   .neyronium-banner {
     min-height: 200px;
@@ -129,9 +126,10 @@ font-size: 14px;
     background-size: cover;
     background-image: url(/images/neuronium-banner-mobile.png);
   }
-.fa-vk {
-  color: white !important;
-}
+  .fa-vk {
+    color: white !important;
+  }
+
   .neyronium-card {
     width: 18rem;
     margin: 0 auto 20px auto;
@@ -146,7 +144,7 @@ font-size: 14px;
   
 }
 
-@media only screen and (min-width:  600px) {
+@media (min-width:  600px) {
   .neyronium-banner {
     height: 265px;
   }
@@ -165,7 +163,7 @@ font-size: 14px;
 }
 
 
-@media only screen and (min-width:  900px) {
+@media (min-width:  900px) {
   .neyronium-banner {
     height: 265px;
   }
@@ -173,7 +171,7 @@ font-size: 14px;
 
 @media only screen and (min-width:  1100px) {
   .neyronium-banner {
-    height: 565px;
+    height: 265px;
   }
 }
 
