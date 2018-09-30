@@ -27,21 +27,20 @@ body {
 
 .neyronium-brand {
   float: left;
-  width: 71px;
-  height: 71px;
-  margin-left: 46px;
-  margin-top: 10px;
+  width: 41px;
+  height: 41px;
+  
   border-radius: 100px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
-box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
 }
 
 .neyronium-banner {
     
+  margin: 10px 0 10px 0;
   width: 100%;
   min-height: 70px;
   max-height: 565px;
-  
+  position: relative;
   border-radius: 4px;
   background-color: #FFFFFF;
   background-image: url(/images/neuronium-banner.png);
@@ -148,6 +147,8 @@ font-size: 14px;
 @media (min-width:  600px) {
   .neyronium-banner {
     height: 265px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   .neyronium-card {
     width: 18rem;
@@ -167,12 +168,16 @@ font-size: 14px;
 @media (min-width:  900px) {
   .neyronium-banner {
     height: 265px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
 
 @media only screen and (min-width:  1100px) {
   .neyronium-banner {
     height: 265px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
 
@@ -191,6 +196,45 @@ h1 {
   color: #41485D;  
   border-bottom: 5px solid #808EDA;
   
+}
+ 
+.neyronium-image-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 30%;
+}
+
+.neyronium-transparent {
+  background-color: gray;
+  opacity: 0.5;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.neyronium-banner-title {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em #808EDA;
+  text-align: right;
+  padding: 2px 10px 2px 10px;
+  
+}
+
+.neyronium-banner-title a {
+  color: white;
+}
+
+.neyronium-banner-title-text {
+  padding-top: 15px;
+  font-weight: 400;
+  font-size: 3em;
+  line-height: normal;
+}
+
+.neyronium-banner-subtitle-text {
+  font-weight: 300;
+  font-size: 1em;
+  line-height: normal;
 }
 
 li,p {

@@ -1,6 +1,67 @@
 
 
-    <div class="neyronium-banner"></div>
+    
+    <div class="neyronium-banner">
+        <div class="neyronium-image-bottom neyronium-transparent"></div>
+        <div class="neyronium-image-bottom neyronium-banner-title">
+            <div class="row">
+                <div class="col-md-6" style="text-align: left !important;">
+                    <div class="non-mobile-only" style="
+                        margin-top: 20px;
+                                font-style: normal;
+                                font-weight: 300;
+                                line-height: normal;
+                                font-size: 20px;
+                                " 
+                                >
+                                <i class="fa fa-mobile"></i>
+                                <i class="fab fa-viber" style="color: #8f5db7" title="Viber"></i>
+                                <i class="fab fa-whatsapp" style="color: #25d366" title="WhatsApp"></i>
+                                <i class="fab fa-telegram" style="color: #0088cc" title="Telegram"></i>
+                        
+                                <a href="tel:+79160884611" >8-916-088-46-11</a>
+                        <br>
+                        
+                                        <a href="mailto:info@neyronium.pro">
+                                                info@neyronium.pro
+                                        </a>
+                        
+                        <br>
+                        <span class="fa fa-twitter" style="color: #1da1f2; width: 20px; cursor: pointer;"
+                                                        onclick="
+                                                        javascript:window.open('https://twitter.com/share?text='+encodeURIComponent('Центр развития интеллекта')+'&amp;url='+encodeURIComponent('http://www.neyronium.pro'),'Twitter-dialog','width=626,height=436'); return false;"
+                                                        title="поделиться"
+                                                        >
+                    
+                                    </span>
+                        
+                        
+                                                <span class="vk_share_button" style="margin-top: 10px;" title="поделиться"></span>    
+                        
+                        
+                                                <!-- <div class="fb-share-button" data-href="http://www.neyronium.pro" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.neyronium.pro%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">поделиться</a></div> -->
+                                                <i class="fa fa-facebook" style="color: #3b5998; cursor: pointer;" 
+                                                onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://www.neyronium.pro'),'facebook-share-dialog','width=626,height=436'); return false;"
+                                                title="поделиться"
+                                                ></i>
+                                                
+                        
+                        
+                                </div>
+                </div>
+                <div class="col-md-6">
+                    
+                        <div class="neyronium-banner-title-text">
+                                
+                            Нейрониум</div>    
+                        <div class="neyronium-banner-subtitle-text">Центр развития интеллекта</div>    
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
 
     <div class="row">
         
@@ -61,9 +122,23 @@
                 <hr/>
                 <% }); %>
         </div>
+        
     </div>
     
 
 
     </div>
     </div>
+
+    <script>
+            $('.vk_share_button').each((index, el) => {
+                el.innerHTML = VK.Share.button(
+                'http://www.neyronium.pro', {
+                    type: 'custom', 
+                    image: 'http://neyronium.pro/images/neuronium-banner.png',
+                    text: '<i class="fa fa-vk"></i>'}); 
+            });
+            
+            
+            
+        </script>
