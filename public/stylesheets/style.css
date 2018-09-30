@@ -193,7 +193,7 @@ h1 {
   
 }
 
-p {
+li,p {
   
   font-family: Roboto;
   font-style: normal;
@@ -207,7 +207,7 @@ p {
 .neyronium-card {
   border-radius: 4px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05), 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-left: 14px solid  #2D9CDB;
+  border-left: 8px solid  #2D9CDB;
   margin: 0 auto  20px auto;
 }
 
@@ -273,4 +273,43 @@ p {
   color: white;
   font-family: Roboto;
   font-size: 14px;
+}
+
+
+/* about me */
+.neyronium-equal-height-list li {
+  margin-bottom: 15px;
+  height:  80px !important;
+  line-height: 80px;
+  
+}
+.neyronium-equal-height-list li span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px;
+}
+
+.neyronium-left-border-list li {
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
+  padding-left: 20px;
+}
+
+@media (min-height: 601px) {
+  img.neyronium-me {
+  margin: 10px;
+  float: right;
+  width: 80%;
+}   
+}
+@media (max-height: 600px) {
+  img.neyronium-me {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+  }   
+}
+
+img.neyronium-shadowed {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05), 0px 0px 15px rgba(0, 0, 0, 0.1);    
 }
