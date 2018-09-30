@@ -5,7 +5,7 @@
     }, 
     "mongodb": {
         "connectionString": "mongodb+srv://andrei:pGMuBxVg1OkojeCm@cluster0-jya34.mongodb.net/test?retryWrites=true",
-        "dbName": "neyronium_pre1"
+        "dbName": "neyronium_prod"
     },
     "mail": {
         
