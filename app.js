@@ -32,6 +32,8 @@ app.set('services', {
   redisClient
 });
 
+app.locals.me = settings.me;
+
 app.use(expressLayouts);
 
 app.set('views', path.join(__dirname, 'views'));
@@ -51,7 +53,7 @@ app.use((req, res, next) => {
   // no need to inject services into app
   req.services = app.get('services');
   req.app = app;
-
+  res.locals.options = {};
   next();
 });
 

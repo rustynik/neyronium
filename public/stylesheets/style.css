@@ -5,7 +5,6 @@ body {
 
 .neyronium-header {
   z-index: 1000;
-  
   width: 100%;
   background: #808EDA;
 }
@@ -15,7 +14,6 @@ body {
   background: #808EDA !important;
   font-family: Roboto !important;
   font-style: regular;
-  
 }
 
 .neyronium-header a {
@@ -25,15 +23,28 @@ body {
   line-height: 1.2;
 }
 
+
 .neyronium-brand {
   float: left;
-  width: 41px;
-  height: 41px;
-  
+  margin-top: 5px;  
   border-radius: 100px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
 }
 
+.neyronium-title {
+  margin: 22px 0 0 50px;
+  font-weight: 500;
+  line-height: 0.9;
+  font-size: 30px;
+  color: #41485D;
+}
+
+.neyronium-subtitle {  
+  margin: 0 0 0 50px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #676D7D;
+}
 .neyronium-banner {
     
   margin: 10px 0 10px 0;
@@ -50,36 +61,15 @@ body {
 }
 
 .neyronium-contacts {
-  padding-right: 40px; 
-  text-align: right;  
-}
-
-.neyronium-title {
+  text-align: right; 
+  margin-top: 18px;
   
-  width: 161px;
-  height: 36px;
-  margin-left: 130px;
-  margin-top: 20px;
-  font-weight: 500;
-  line-height: normal;
-  font-size: 30px;
+}
+.neyronium-contacts a {
   color: #41485D;
 }
 
-.neyronium-subtitle {
-  
-width: 180px;
-height: 17px;
-margin-left: 130px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-font-size: 14px;
-
-  color: #676D7D;
-}
 
 .main-content {
   padding-left: 40px;

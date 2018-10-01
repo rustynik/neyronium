@@ -10,5 +10,17 @@
     "mail": {
         
     },
-    "enableAdminAccess": true
+    "enableAdminAccess": true,
+    "me": {
+        
+        "phone": {
+            "link": "+79160884611",
+            "display": "8 916 088 4611"
+        },
+
+        "email": "neyronium@gmail.com",
+        
+        "companyName": "Нейрониум",
+        "companyDescription": "Центр развития интеллекта"
+    }
 }

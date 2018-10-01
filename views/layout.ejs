@@ -1,96 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <%- include('partials/head') %>
-</head>
-<body>        
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <head>
+        <%- include('partials/head') %>
+    </head>
+    <body>        
 
-    <div class="neyronium-header">
-        <% include partials/nav %>
+        <div class="neyronium-header">
+            
+            <% include partials/nav %>
 
-        <div class="mobile-only " style="position: absolute; 
-        top: 18px;
-        left: 100px;
-        
-        color: white;
-">
-                <div class="row">
-            <div style="font-size:14px; " class="col-7">
-                    <a href="tel:+79160884611">8&nbsp;916&nbsp;088&nbsp;46&nbsp;11</a>
-            </div>
-            <div style="font-size:12px;" class="col-5">
-                        
-                        <i class="fa fa-twitter" 
-                                style="color:white; cursor: pointer;"
-                                        onclick="
-                                        javascript:window.open('https://twitter.com/share?text='+encodeURIComponent('Центр развития интеллекта')+'&amp;url='+encodeURIComponent('http://www.neyronium.pro'),'Twitter-dialog','width=626,height=436'); return false;">
-    
-                        </i>
-                        
-                        <i class="vk_share_button" 
-                                style="color:white;">    
-                        </i>
-                        
-                        <i class="fa fa-facebook" style="color: white; cursor: pointer;" 
-                        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://www.neyronium.pro'),'facebook-share-dialog','width=626,height=436'); return false;"></i>
-                        </i>
-            </div>
-        </div>
+            <% include partials/layout/header-contacts-mobile %>
+            
         </div>
 
+        <div class="main-content">
 
+            <!-- "humble" header -->
+            <% if (!options.homePage) { %>
+                
+                <% include partials/layout/humble-header %>
 
+            <% } %>
 
+            <%- body %>
+        
+        </div>
+        
+        <% include partials/layout/footer %>
 
-</div>
-
-    </div>
-    
-    <%- include("partials/index/jumbotron")%>
-    
-    <div class="main-content">
-        <%- body %>
-    </div>
-    
-    <div class="neyronium-footer">
+        <% include partials/layout/socialmedia %>
         
-        <strong>Нейрониум</strong>&nbsp;|&nbsp;Центр развития интеллекта<br>
-        <span><a href="tel:+79160884611">8&nbsp;916&nbsp;088&nbsp;46&nbsp;11</a>|<a href="mailto:neyronium@gmail.ru">neyronium@gmail.ru</a></span>    
-    </div>
-    <script>
-        $('.vk_share_button').each((index, el) => {
-            el.innerHTML = VK.Share.button(
-            'http://www.neyronium.pro', {
-                type: 'custom', 
-                image: 'http://neyronium.pro/images/neuronium-banner.png',
-                text: '<i class="fa fa-vk"></i>'}); 
-        });
-        
-        
-        
-    </script>
-    <script>
-        (function(i,s,o,g,r,a,m){
-          i['GoogleAnalyticsObject']=r;
-          i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
-          i[r].l=1*new Date();
-          a=s.createElement(o),m=s.getElementsByTagName(o)[0];
-          a.async=1;
-          a.src=g;
-          m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-        ga('create', 'UA-126773444-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-</body>
+        <% include partials/layout/googleanalytics %>
+           
+    </body>
 </html>

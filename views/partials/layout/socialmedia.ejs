@@ -1,0 +1,20 @@
+<script>
+        $('.vk_share_button').each((index, el) => {
+            el.innerHTML = VK.Share.button(
+            'http://www.neyronium.pro', {
+                type: 'custom', 
+                image: 'http://www.neyronium.pro/images/male_child.png',
+                text: '<i class="fa fa-vk"></i>'}); 
+        });
+    </script>
+    
+    <div id="fb-root"></div>
+    
+    <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+    </script>  

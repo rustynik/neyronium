@@ -9,7 +9,9 @@ const routes = {
             courses: await req.courseTypes.findByParent(null),
             latestPosts: await vk.getLatestPosts()
         };
-    
+        
+        res.locals.options.homePage = true;
+        
         res.render('index', data);
     },
 
