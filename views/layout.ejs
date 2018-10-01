@@ -66,5 +66,17 @@
         <strong>Нейрониум</strong>&nbsp;|&nbsp;Центр развития интеллекта<br>
         <span><a href="tel:+79160884611">8&nbsp;916&nbsp;088&nbsp;46&nbsp;11</a>|<a href="mailto:neyronium@gmail.ru">neyronium@gmail.ru</a></span>    
     </div>
+    <script>
+        $('.vk_share_button').each((index, el) => {
+            el.innerHTML = VK.Share.button(
+            'http://www.neyronium.pro', {
+                type: 'custom', 
+                image: 'http://neyronium.pro/images/neuronium-banner.png',
+                text: '<i class="fa fa-vk"></i>'}); 
+        });
+        
+        
+        
+    </script>
 </body>
 </html>
