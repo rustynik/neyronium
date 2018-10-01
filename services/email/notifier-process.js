@@ -9,7 +9,7 @@ const EMAIL_SETTINGS = {
     secure: true, // true for 465, false for other ports
     auth: {
         user: "andrei.nikolaew@gmail.com", // generated ethereal user
-        pass: "CallaMaranatha2018" // generated ethereal password
+        pass: "Calla_Maranatha_2018" // generated ethereal password
     },
     admin: 'vaisvanarius@mail.ru'
 };
