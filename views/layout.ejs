@@ -22,7 +22,34 @@
 
             <% } %>
 
+<<<<<<< HEAD
             <%- body %>
+=======
+
+</div>
+
+    </div>
+    
+    <%- include("partials/index/jumbotron")%>
+    
+    <div class="main-content">
+        <%- body %>
+    </div>
+    
+    <div class="neyronium-footer">
+        
+        <strong>Нейрониум</strong>&nbsp;|&nbsp;Центр развития интеллекта<br>
+        <span><a href="tel:+79160884611">8&nbsp;916&nbsp;088&nbsp;46&nbsp;11</a>|<a href="mailto:neyronium@gmail.ru">neyronium@gmail.ru</a></span>    
+    </div>
+    <script>
+        $('.vk_share_button').each((index, el) => {
+            el.innerHTML = VK.Share.button(
+            'http://www.neyronium.pro', {
+                type: 'custom', 
+                image: 'http://www.neyronium.pro/images/neuronium-banner.png',
+                text: '<i class="fa fa-vk"></i>'}); 
+        });
+>>>>>>> 52238121c92e14f94a6457f5e076fd13869dc7da
         
         </div>
         
