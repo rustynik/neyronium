@@ -1,10 +1,16 @@
 <script>
         $('.vk_share_button').each((index, el) => {
-            el.innerHTML = VK.Share.button(
-            'http://www.neyronium.pro', {
-                type: 'custom', 
-                image: 'http://www.neyronium.pro/images/male_child.png',
-                text: '<i class="fa fa-vk"></i>'}); 
+            
+            var url = 'http://vk.com/share.php?url=' +
+            encodeURIComponent("http://www.neyronium.pro") +
+            
+            "&title=" + encodeURIComponent("Нейрониум | центр развития интеллекта") + 
+           
+            "&image=" + encodeURIComponent("http://www.neyronium.pro/images/male_child.png") + 
+            "&description=" + encodeURIComponent("подготовка к школе, психодиагностика, логопед-дефектолог в Химках")
+            '&noparse=true';
+
+            el.innerHTML = '<a href="#" onclick="window.open(\'' + url + '\', \'vk\', \'width=700,height=350\'); return false;"><i class="fa fa-vk" style="width: 20px;"></i></a>';
         });
     </script>
     
