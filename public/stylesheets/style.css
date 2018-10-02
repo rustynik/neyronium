@@ -71,11 +71,7 @@ body {
 
 
 
-.main-content {
-  padding-left: 40px;
-  padding-right: 40px;
-  min-height: 900px;
-}
+
 
 .mobile-only {
   display: block;
@@ -87,8 +83,8 @@ body {
 @media (max-width: 600px) {
   
   .main-content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .neyronium-contacts {
     font-size: smaller !important;
@@ -135,6 +131,11 @@ body {
 }
 
 @media (min-width:  600px) {
+  .main-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .neyronium-banner {
     height: 265px;
     border-top-left-radius: 0;
@@ -331,8 +332,9 @@ li,p {
 @media (min-height: 601px) {
   img.neyronium-me {
   margin: 10px;
-  float: left;
-  width: 45%;
+  float: right;
+  width: 80%;
+  margin: 10px;
 }   
 }
 @media (max-height: 600px) {
@@ -341,6 +343,7 @@ li,p {
       margin-left: auto;
       margin-right: auto;
       width: 90%;
+      margin: 10px;
   }   
 }
 
