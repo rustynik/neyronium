@@ -331,8 +331,8 @@ li,p {
 @media (min-height: 601px) {
   img.neyronium-me {
   margin: 10px;
-  float: right;
-  width: 80%;
+  float: left;
+  width: 45%;
 }   
 }
 @media (max-height: 600px) {
