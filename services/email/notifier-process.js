@@ -3,15 +3,15 @@
 
 const EMAIL_SETTINGS = {
         
-    host: 'smtp.gmail.com',
+    host: 'mail.name.com',
     port: 465,
-    from: 'andrei.nikolaew@gmail.com',
+    from: 'info@neyronium.pro',
     secure: true, // true for 465, false for other ports
     auth: {
-        user: "andrei.nikolaew@gmail.com", // generated ethereal user
-        pass: "Calla_Maranatha_2018" // generated ethereal password
+        user: "info@neyronium.pro", // generated ethereal user
+        pass: "show_MUST_2019" // generated ethereal password
     },
-    admin: 'vaisvanarius@mail.ru'
+    admin: 'andrei.nikolaew@gmail.com'
 };
 
 const Notifier = require("./notifierService"),
