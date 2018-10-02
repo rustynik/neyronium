@@ -11,7 +11,7 @@ const EMAIL_SETTINGS = {
         user: "info@neyronium.pro", // generated ethereal user
         pass: "show_MUST_2019" // generated ethereal password
     },
-    admin: 'andrei.nikolaew@gmail.com'
+    admin: 'neyronium@gmail.com'
 };
 
 const Notifier = require("./notifierService"),
