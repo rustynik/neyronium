@@ -29,7 +29,8 @@ if (settings.cache.useCache) {
 app.set('services', {
   notify: require('./services/email/notify'),
   cache: redisCache,
-  redisClient
+  redisClient,
+  log: db.log
 });
 
 app.locals.me = settings.me;
@@ -56,6 +57,16 @@ app.use((req, res, next) => {
   res.locals.options = {};
   next();
 });
+/* log who sent requests
+app.use(async (req, res, next) => {
+  await req.services.log("who", {
+    ip: req.ip,
+    url: req.url }
+  ).catch(next);
+  next();
+})
+
+*/
 
 app.use('/', guestRouter);
 app.use('/apply', applyRouter);

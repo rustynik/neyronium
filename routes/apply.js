@@ -17,8 +17,16 @@ router.post('/:courseId', async (req, res, next) => {
     
     if (!course) return next("Что-то пошло не так");
 
+    const model = req.body;
+
+    await req.services.log("request", {
+        ip: req.ip,
+        model,
+        course
+    }).catch(next);
+
     req.services.notify({
-            model: req.body,
+            model,
             course
         });
 

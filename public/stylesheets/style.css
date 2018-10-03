@@ -359,12 +359,11 @@ img.neyronium-shadowed {
 .breadcrumbs {
   margin: 20px 0 20px 0;
   font-size: small;
-  color: #808EDA;
-
+  color: #41485D;
 }
 
 .breadcrumbs-item + .breadcrumbs-item::before {
-  content: " > "
+  content: ">"
 }
 
 .breadcrumbs-item a {

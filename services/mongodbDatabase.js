@@ -73,6 +73,18 @@ module.exports = function dbFactory({ connectionString, dbName = 'test' }) {
         }
     };
     
+    const log = async (type, data) => {
+        const client = await Client.connect(connectionString);
+        const db = client.db(dbName);
+
+        await db.collection(type).insertOne({
+        date: new Date(),
+        data
+        });
+
+        client.close();
+    };
+
     const courseTypesApi = {
         findById: (id, cb) => {
             handleRequest((db, cb) => {
@@ -152,7 +164,8 @@ module.exports = function dbFactory({ connectionString, dbName = 'test' }) {
     
     return {
         courses: coursesApi,
-        courseTypes: courseTypesApi
+        courseTypes: courseTypesApi,
+        log
     };
 };
 
