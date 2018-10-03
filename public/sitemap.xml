@@ -9,78 +9,128 @@
 
 <url>
   <loc>http://www.neyronium.pro/</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.neyronium.pro/about</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.neyronium.pro/contacts</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://www.neyronium.pro/blog</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.neyronium.pro/courses/psychologist</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/speech_therapist</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/courses/speech_language_pathologist</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/groups</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://www.neyronium.pro/details/af</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/courses/psychologist_diagnostics</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/blablabl</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/courses/psychologist_individual</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/sss</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/courses/speech_language_pathologist_diagnostics</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/asdasasd</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/courses/speech_language_pathologist_individual</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.neyronium.pro/courses/this_is_a_good_category</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.neyronium.pro/courses/adasd_asdas</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.neyronium.pro/courses/dfgdgfgdfg</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.neyronium.pro/apply/af</loc>
-  <lastmod>2018-09-28T11:10:50+00:00</lastmod>
+  <loc>http://www.neyronium.pro/details/psychologist_diagnostics_2_3</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
   <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/psychologist_diagnostics_3_12</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/psychologist_diagnostics_school</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/parent_consultations</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/individual_development</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/individual_behavior_correction</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/speech_language_pathologist_diagnostics_3_9</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/details/speech_language_pathologist_individual</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/psychologist_diagnostics_2_3</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/psychologist_diagnostics_3_12</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/psychologist_diagnostics_school</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/parent_consultations</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/individual_development</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/individual_behavior_correction</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/speech_language_pathologist_diagnostics_3_9</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.neyronium.pro/apply/speech_language_pathologist_individual</loc>
+  <lastmod>2018-10-03T12:00:12+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 
 
