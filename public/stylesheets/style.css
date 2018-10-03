@@ -1,6 +1,11 @@
 body {
   background-color: #FFFFFF;
   font-family: Roboto;
+  
+}
+
+.main-content {
+  min-height: 1000px;
 }
 
 .neyronium-header {
@@ -79,9 +84,7 @@ body {
 .non-mobile-only {
   display: none;
 }
-.main-content {
-  min-height: 1000px;
-}
+
 @media (max-width: 600px) {
   
   .main-content {
