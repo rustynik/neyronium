@@ -1,9 +1,33 @@
 
-    <div class="main-content">
+    <% if (courseType.parents.length) { %>
+
+        <div class="breadcrumbs">
+            <% courseType.parents.forEach(item => { %>
+                <span class="breadcrumbs-item">
+                    <a href="/courses/<%= item.id %>">
+                        <%= item.title %>
+                    </a>
+                    
+                </span>
+            <% }); %>
+            <span class="breadcrumbs-item">
+                <span class="breadcrumbs-item">
+                    <a href="/courses/<%= courseType.id %>">
+                                <%= courseType.title %>
+                    </a>        
+                </span>
+            </span>
+            <span class="breadcrumbs-item">
+                <%= course.title %>
+            </span>
+
+        </div> 
+    <% } %>
+
         <h1><span class="h1"><%= course.title %></span></h1>
         <p class="text-muted"><%= course.description %></p>
         <p><%- course.contents %></p>
         <a href="/apply/<%= course.id %>" class="btn btn-primary">Оставить заявку</a>
         <a href="#" class="btn btn-secondary" onclick="history.back()">Назад</a>    
-    </div>
+    
     

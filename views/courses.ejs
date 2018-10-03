@@ -1,5 +1,22 @@
 
         
+        <% if (parents.length) { %>
+
+            <div class="breadcrumbs">
+                <% parents.forEach(item => { %>
+                    <span class="breadcrumbs-item">
+                        <a href="/courses/<%= item.id %>">
+                            <%= item.title %>
+                        </a>
+                        
+                    </span>
+                <% }); %>
+                <span class="breadcrumbs-item">
+                    <%= title %>
+                </span>
+
+            </div> 
+        <% } %>
         <h1><span class="h1"><%= title %></span></h1>
         
         <p>

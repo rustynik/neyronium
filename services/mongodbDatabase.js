@@ -85,10 +85,28 @@ module.exports = function dbFactory({ connectionString, dbName = 'test' }) {
             
             const client = await Client.connect(connectionString);
             const db = client.db(dbName);
-            const result = await db.collection("categories").findOne({ id });
+            const result = await db
+                .collection("categories")
+                .aggregate([
+                  { 
+                      $match: {
+                        id
+                  }},
+                  {
+                      $graphLookup: {
+                        from: 'categories',
+                        startWith: '$parentId',
+                        connectFromField: 'parentId',
+                        connectToField: 'id',
+                        as: 'parents'      
+                      }
+                  }  
+                ])
+                .toArray();
+            
             client.close();
             
-            return result;
+            return result && result.length ? result[0] : [];
         },
     
         findByParent: async function(parentId, cb) {

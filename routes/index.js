@@ -22,6 +22,7 @@ const routes = {
         res.render('courses', 
         { 
             title: req.courseType.title, 
+            parents: req.courseType.parents || [],
             description: req.courseType.description || "", 
             contents: req.courseType.contents || "",
             data: data 
